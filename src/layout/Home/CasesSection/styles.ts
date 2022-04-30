@@ -58,25 +58,3 @@ export const ProjectsContainer = styled(Container)`
   justify-items: center;
   align-items: center;
 `;
-
-interface ProjectStyleProps {
-  $isMobile?: boolean;
-  $isOpen?: boolean;
-}
-
-export const ProjectWrapper = styled.article<ProjectStyleProps>`
-  background: ${({ theme }) => theme.colors.blue.medium};
-  width: 100%;
-`;
-
-export const ProjectBanner = styled.div<ProjectStyleProps>``;
-
-export const ProjectContent = styled.div<ProjectStyleProps>``;
-
-export const ProjectTitle = styled.h3<ProjectStyleProps>``;
-
-export const ProjectDescription = styled.p<ProjectStyleProps>``;
-
-export const ProjectStack = styled.div<ProjectStyleProps>``;
-
-export const ButtonsContainer = styled.div<ProjectStyleProps>``;
