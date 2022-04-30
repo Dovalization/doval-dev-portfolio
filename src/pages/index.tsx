@@ -19,7 +19,7 @@ const Home: NextPage<HomeProps> = ({ title }) => {
   return (
     <>
       <NextSeo title="Home" />
-      <HomeLayout title={title} />;
+      <HomeLayout title={title} />
     </>
   );
 };
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
   return {
     props: {
-      title: "Hello Next.js",
+      title: "Inove seu Negócio",
     },
   };
 };
