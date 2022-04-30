@@ -53,9 +53,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSizes.extraLarge};
     text-transform: uppercase;
     font-weight: 800;
+    text-align: center;
 
     > span {
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.accent.regular};
     }
   }
 
