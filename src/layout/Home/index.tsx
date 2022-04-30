@@ -1,4 +1,5 @@
 import { HomeProps } from "@pages/index";
+import { CasesSection } from "./CasesSection";
 import { HeroSection } from "./HeroSection";
 import * as S from "./styles";
 // Layouts are responsible for holding different components together
@@ -20,6 +21,7 @@ export const HomeLayout = ({ title }: HomeLayoutProps) => {
   return (
     <S.Wrapper>
       <HeroSection title={title} />
+      <CasesSection projects={[]} />
     </S.Wrapper>
   );
 };
