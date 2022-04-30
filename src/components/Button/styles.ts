@@ -24,4 +24,8 @@ export const Wrapper = styled.button`
   ${StyledIconBase} {
     margin-left: 0.5rem;
   }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.accent.regular};
+  }
 `;
