@@ -20,6 +20,7 @@ export const HeroContainer = styled.div`
   grid-template-columns: 1fr;
   place-content: center;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  z-index: 4;
 `;
 
 export const HeroBackground = styled.div`
@@ -30,7 +31,6 @@ export const HeroBackground = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
-  z-index: 1;
 
   video {
     object-fit: cover;
@@ -53,5 +53,5 @@ export const HeroContent = styled.div`
   height: 100%;
   width: 100%;
   gap: 1rem;
-  z-index: 2;
+  z-index: 5;
 `;
