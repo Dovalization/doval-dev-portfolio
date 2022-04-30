@@ -1,14 +1,21 @@
 const theme = {
   colors: {
-    text: {
-      dark: "#171923",
-      light: "#F7FAFC",
+    black: "#171923",
+    white: "#FFFFFF",
+    lightGrey: "#F7FAFC",
+    accent: {
+      light: "#FFE8BF",
+      regular: "#FFA600",
+      dark: "#DD6B20",
     },
-    primary: "#FFA600",
-    secondary: "#2D3748",
-    background: "#F7FAFC",
+    blue: {
+      light: "#A0AEC0",
+      medium: "#4A5568",
+      dark: "#2D3748",
+    },
   },
   fontSizes: {
+    extraSmall: "0.8rem",
     small: "1rem",
     medium: "2rem",
     large: "3rem",

@@ -24,9 +24,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.black};
     font-family: ${({ theme }) => theme.fonts.primary};
-    color: ${({ theme }) => theme.colors.text.dark};
+    color: ${({ theme }) => theme.colors.white};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -38,11 +38,11 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 3px;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
     font-weight: bold;
 
     &:hover {
-      text-decoration-color: ${({ theme }) => theme.colors.primary};
+      text-decoration-color: ${({ theme }) => theme.colors.white};
     }
     
 
@@ -52,9 +52,10 @@ export const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.extraLarge};
     text-transform: uppercase;
+    font-weight: 800;
 
     > span {
-      color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 
@@ -63,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
   }
 
-  [disable] {
+  :disabled {
     opacity: 0.6;
     pointer-events: none;
     cursor: not-allowed;
@@ -72,15 +73,19 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
   z-index: 1;
-  max-width: 80%;
+  max-width: 85%;
   margin-right: auto;
   margin-left: auto;
 
-  @media (max-width: 1080px) {
-    max-width: 85%;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 80%;
   }
 
-  @media (max-width: 720px) {
-    max-width: 90%;
+  /* @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    max-width: 80%;
+  } */
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.ultraHighRes}) {
+    max-width: 70%;
   }
 `;
