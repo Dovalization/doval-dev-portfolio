@@ -6,10 +6,11 @@ interface CollapsibleStyleProps {
 }
 
 export const Wrapper = styled.article<CollapsibleStyleProps>`
+  position: relative;
   background: ${({ theme }) => theme.colors.blue.medium};
   width: 100%;
+  max-width: 100%;
   margin: 0.2rem;
-  max-width: 70%;
   outline: 4px solid transparent;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -22,6 +23,10 @@ export const Wrapper = styled.article<CollapsibleStyleProps>`
       css`
         outline: 4px solid ${theme.colors.accent.regular};
       `}
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 70%;
   }
 `;
 
@@ -56,6 +61,11 @@ export const Icons = styled.div<CollapsibleStyleProps>`
 `;
 
 export const ButtonsContainer = styled.div<CollapsibleStyleProps>`
+  flex-direction: column;
   display: flex;
   gap: 1rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    flex-direction: row;
+  }
 `;
