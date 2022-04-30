@@ -1,4 +1,5 @@
 import { HomeProps } from "@pages/index";
+import { AboutSection } from "./AboutSection";
 import { CasesSection } from "./CasesSection";
 import { HeroSection } from "./HeroSection";
 import * as S from "./styles";
@@ -22,6 +23,7 @@ export const HomeLayout = ({ title }: HomeLayoutProps) => {
     <S.Wrapper>
       <HeroSection title={title} />
       <CasesSection projects={[]} />
+      <AboutSection />
     </S.Wrapper>
   );
 };
