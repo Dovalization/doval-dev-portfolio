@@ -6,9 +6,9 @@ export const Wrapper = styled.button`
 
   /* Display & Box Model */
   border: none;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   outline: none;
-  padding: 1rem 2rem;
+  padding: 1rem 6rem;
 
   /* Color */
   background: ${({ theme }) => theme.colors.accent.dark};
@@ -16,6 +16,7 @@ export const Wrapper = styled.button`
 
   /* Text */
   text-transform: uppercase;
+  font-weight: bold;
 
   /* Other */
   transition: all 0.2s ease-in-out;
