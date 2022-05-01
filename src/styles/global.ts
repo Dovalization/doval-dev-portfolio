@@ -35,14 +35,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 3px;
+    text-decoration: none;
     color: ${({ theme }) => theme.colors.white};
     font-weight: bold;
 
     &:hover {
-      text-decoration-color: ${({ theme }) => theme.colors.white};
     }
     
 
