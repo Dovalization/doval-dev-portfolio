@@ -12,10 +12,13 @@ export const Wrapper = styled.article<CollapsibleStyleProps>`
   max-width: 100%;
   margin: 0.2rem;
   outline: 4px solid transparent;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  transition: outline 0.1s linear;
+  box-shadow: ${({ $isOpen }) =>
+    $isOpen
+      ? "0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.25);"
+      : "0 0.5rem 1rem rgba(0, 0, 0, 0.1);"};
+  transition: all 0.1s linear;
 
   &:hover {
     outline: ${({ theme, $isOpen }) =>
@@ -23,7 +26,7 @@ export const Wrapper = styled.article<CollapsibleStyleProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    max-width: 70%;
+    max-width: ${({ $isOpen }) => ($isOpen ? "75%" : "70%")};
   }
 `;
 
@@ -34,11 +37,19 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   left: 0;
   right: 0;
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-  max-width: 20rem;
+  max-width: 10rem;
   z-index: 2;
   transform: ${({ $isOpen }) =>
     $isOpen ? "translateY(-50%)" : "translateY(-25%)"};
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 15rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    max-width: 18rem;
+  }
 `;
 
 export const Banner = styled.div<CollapsibleStyleProps>`
