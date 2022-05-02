@@ -7,13 +7,13 @@ interface SocialIconProps {
   url: string;
 }
 
-export const SocialIcon = ({ type, url }: SocialIconProps) => {
-  const icon = {
-    GitHub: <Github />,
-    LinkedIn: <Linkedin />,
-    Twitter: <Twitter />,
-  };
+const icon = {
+  GitHub: <Github />,
+  LinkedIn: <Linkedin />,
+  Twitter: <Twitter />,
+};
 
+export const SocialIcon = ({ type, url }: SocialIconProps) => {
   return (
     <Link href={url} passHref>
       <S.Wrapper target="_blank">
