@@ -8,7 +8,12 @@ export const Wrapper = styled.button`
   border: none;
   border-radius: 0.5rem;
   outline: none;
-  padding: 1rem 6rem;
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 
   /* Color */
   background: ${({ theme }) => theme.colors.accent.dark};
@@ -17,12 +22,15 @@ export const Wrapper = styled.button`
   /* Text */
   text-transform: uppercase;
   font-weight: bold;
+  text-align: center;
 
   /* Other */
   transition: all 0.2s ease-in-out;
 
   ${StyledIconBase} {
-    margin-left: 0.5rem;
+    stroke-width: 2;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   &:hover {
