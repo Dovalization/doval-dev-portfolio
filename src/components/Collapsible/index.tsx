@@ -4,6 +4,7 @@ import banner from "@public/images/project-banner.jpg";
 import logo from "@public/images/project-logo.png";
 import Image from "next/image";
 import { useCallback, useState } from "react";
+import { Code, Globe } from "styled-icons/feather/";
 import * as S from "./styles";
 
 interface CollapsibleProps {
@@ -15,9 +16,7 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
 
   const toggleCollapsible = useCallback(() => {
     // only toggle if the collapsible is closed
-    if (!isOpen) {
-      setIsOpen(true);
-    }
+    setIsOpen(!isOpen);
   }, [isOpen]);
 
   const handleClick = useCallback(() => {
@@ -25,16 +24,21 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
   }, [toggleCollapsible]);
 
   return (
-    <S.Wrapper onClick={handleClick} $isOpen={isOpen}>
-      <S.Banner>
+    <S.Wrapper $isOpen={isOpen}>
+      <S.Banner onClick={handleClick} $isOpen={isOpen}>
         <Image
           src={banner}
           alt="Banner"
           layout="responsive"
           objectFit="cover"
         />
-        <S.LogoWrapper>
-          <Image src={logo} alt="Logo" layout="responsive" />
+        <S.LogoWrapper $isOpen={isOpen}>
+          <Image
+            src={logo}
+            alt="Logo"
+            layout="responsive"
+            objectFit="contain"
+          />
         </S.LogoWrapper>
       </S.Banner>
       <S.Content $isOpen={isOpen}>
@@ -46,8 +50,12 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
           ))}
         </S.Icons>
         <S.ButtonsContainer>
-          <Button>Acessar</Button>
-          <Button>Github</Button>
+          <Button href={project.links.live} icon={Globe}>
+            Acessar
+          </Button>
+          <Button href={project.links.code} icon={Code}>
+            Github
+          </Button>
         </S.ButtonsContainer>
       </S.Content>
     </S.Wrapper>
