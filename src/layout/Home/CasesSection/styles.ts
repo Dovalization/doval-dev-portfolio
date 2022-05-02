@@ -11,10 +11,10 @@ export const Wrapper = styled.section`
   &::before {
     content: "";
     position: absolute;
-    top: -12rem;
+    top: -14rem;
     left: 0;
     width: 100%;
-    height: 12rem;
+    height: 15rem;
     background: url("/images/doval-dev-wave-divider-top.svg") no-repeat;
     background-size: cover;
     /* background: url('/img/shapes/fluid-top-white.svg') no-repeat bottom; */
@@ -27,10 +27,10 @@ export const Wrapper = styled.section`
   &::after {
     content: "";
     position: absolute;
-    bottom: -12rem;
+    bottom: -14rem;
     left: 0;
     width: 100%;
-    height: 12rem;
+    height: 15rem;
     background: url("/images/doval-dev-wave-divider-bottom.svg") no-repeat;
     background-size: cover;
     /* background: url('/img/shapes/fluid-top-white.svg') no-repeat bottom; */
