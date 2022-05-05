@@ -5,10 +5,9 @@ export const Wrapper = styled.div`
   display: inline-block;
 
   ${StyledIconBase} {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     color: ${({ theme }) => theme.colors.white};
-    stroke-width: 2;
   }
 `;
 

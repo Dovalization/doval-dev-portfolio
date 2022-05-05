@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button";
 import { Project } from "@/types/common";
+import { TechIcon } from "@components/TechIcon";
 import banner from "@public/images/project-banner.jpg";
 import logo from "@public/images/project-logo.png";
 import Image from "next/image";
@@ -46,7 +47,7 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
         <S.Description>{project.description}</S.Description>
         <S.Icons>
           {project.stack.map((item, index) => (
-            <span key={index}>{item}</span>
+            <TechIcon key={index} type={item} />
           ))}
         </S.Icons>
         <S.ButtonsContainer>

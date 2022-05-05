@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   logo: string;
   banner: string;
-  stack: string[];
+  stack: Tech[];
   links: {
     live?: string;
     code?: string;
@@ -18,3 +18,17 @@ export interface Testimonial {
   avatar: string;
   text: string;
 }
+
+export type Tech =
+  | "HTML"
+  | "CSS"
+  | "JavaScript"
+  | "TypeScript"
+  | "WordPress"
+  | "NodeJS"
+  | "Prisma"
+  | "Prismic"
+  | "NextJS"
+  | "React"
+  | "StyledComponents"
+  | "Sass";

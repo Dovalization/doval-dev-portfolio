@@ -1,3 +1,4 @@
+import { Tech } from "@/types/common";
 import {
   Css3,
   Html5,
@@ -15,19 +16,7 @@ import {
 import * as S from "./styles";
 
 interface TechIconProps {
-  type:
-    | "HTML"
-    | "CSS"
-    | "JavaScript"
-    | "TypeScript"
-    | "WordPress"
-    | "NodeJS"
-    | "Prisma"
-    | "Prismic"
-    | "NextJS"
-    | "React"
-    | "StyledComponents"
-    | "Sass";
+  type: Tech;
 }
 
 const icon = {
