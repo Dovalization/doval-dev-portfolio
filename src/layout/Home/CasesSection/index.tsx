@@ -16,7 +16,7 @@ const mockProject: Project = {
     code: "github.com/",
     live: "https://www.google.com/",
   },
-  stack: ["React", "Next.js", "TypeScript"],
+  stack: ["React", "NextJS", "TypeScript"],
   title: "Maria Luiza - Centro de Estética",
 };
 
