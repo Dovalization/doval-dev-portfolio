@@ -5,7 +5,3 @@ export const Wrapper = styled.section`
   min-height: 100vh;
   padding: 15rem 0;
 `;
-
-export const Title = styled.h1`
-  text-align: center;
-`;
