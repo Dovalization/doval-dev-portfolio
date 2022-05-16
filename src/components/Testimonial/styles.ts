@@ -24,7 +24,7 @@ export const Text = styled.p`
 
 export const AvatarWrapper = styled.div`
   border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.colors.accent.regular};
+  outline: 3px solid ${({ theme }) => theme.colors.accent.regular};
   overflow: hidden;
   width: 5rem;
   height: 5rem;
