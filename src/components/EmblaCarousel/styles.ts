@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const Slide = styled.div`
   position: relative;
   min-width: 100%;
-  padding: 0 2.5rem;
+  padding: 0.25rem 2.5rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     min-width: 50%;
