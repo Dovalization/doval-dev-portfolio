@@ -1,5 +1,6 @@
 import { Project, Testimonial as TestimonialT } from "@/types/common";
 import { HomeProps } from "@pages/index";
+import { AboutSection } from "./AboutSection";
 import { CasesSection } from "./CasesSection";
 import { HeroSection } from "./HeroSection";
 import * as S from "./styles";
@@ -52,6 +53,7 @@ export const HomeLayout = ({ title }: HomeLayoutProps) => {
       <HeroSection title={title} />
       <CasesSection projects={mockProjects} />
       <TestimonialsSection testimonials={mockTestimonials} />
+      <AboutSection />
     </S.Wrapper>
   );
 };
