@@ -2,6 +2,7 @@ import { Project, Testimonial as TestimonialT } from "@/types/common";
 import { HomeProps } from "@pages/index";
 import { AboutSection } from "./AboutSection";
 import { CasesSection } from "./CasesSection";
+import { ContactSection } from "./ContactSection";
 import { HeroSection } from "./HeroSection";
 import * as S from "./styles";
 import { TestimonialsSection } from "./TestimonialsSection";
@@ -38,7 +39,7 @@ const mockProject: Project = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   id: "1",
   links: {
-    code: "github.com/",
+    code: "https://github.com/",
     live: "https://www.google.com/",
   },
   stack: ["React", "NextJS", "TypeScript"],
@@ -54,6 +55,7 @@ export const HomeLayout = ({ title }: HomeLayoutProps) => {
       <CasesSection projects={mockProjects} />
       <TestimonialsSection testimonials={mockTestimonials} />
       <AboutSection />
+      <ContactSection />
     </S.Wrapper>
   );
 };
