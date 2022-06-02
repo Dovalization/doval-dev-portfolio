@@ -18,7 +18,7 @@ export const Testimonial = ({
       <S.AuthorContainer>
         <S.AvatarWrapper>
           <Image
-            src="/images/testimonial-author.jpg"
+            src={avatar}
             layout="responsive"
             objectFit="cover"
             width={100}
