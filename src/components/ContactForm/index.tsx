@@ -1,4 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -11,6 +12,7 @@ import * as S from "./styles";
 interface SubcriptionFormFields {
   email: string;
   name: string;
+  message: string;
 }
 
 const SubscriptionFormSchema = yup.object().shape({
@@ -65,12 +67,12 @@ export const ContactForm = () => {
   };
 
   const submitForm = useCallback(async (data: SubcriptionFormFields) => {
-    // try {
-    //   const res = await axios.post("/api/contact", data);
-    //   console.log(res.data);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const res = await axios.post("/api/contact", data);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
     console.log(data);
   }, []);
 
@@ -88,19 +90,19 @@ export const ContactForm = () => {
             name="name"
             type="text"
             placeholder="Nome"
-            disabled={isSubmitting || isSubmitSuccessful}
+            disabled={isSubmitSuccessful}
           />
           <Input
             name="email"
             type="email"
             placeholder="E-mail"
-            disabled={isSubmitting || isSubmitSuccessful}
+            disabled={isSubmitSuccessful}
           />
           <Input
             name="message"
             type="textarea"
             placeholder="Mensagem..."
-            disabled={isSubmitting || isSubmitSuccessful}
+            disabled={isSubmitSuccessful}
           />
         </S.FieldsContainer>
         <S.SuccessMessage open={isSubmitSuccessful}>
