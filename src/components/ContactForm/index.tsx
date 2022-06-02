@@ -1,18 +1,21 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { FormProvider, useForm } from "react-hook-form";
 import { CheckCircle, Loader, Send } from "styled-icons/feather/";
 import * as yup from "yup";
 import { Button } from "../Button";
 import { Input } from "../Input";
+import { ReCaptcha } from "../ReCaptcha";
 import * as S from "./styles";
 
 interface SubcriptionFormFields {
   email: string;
   name: string;
   message: string;
+  recaptcha: boolean;
 }
 
 const SubscriptionFormSchema = yup.object().shape({
@@ -28,12 +31,42 @@ const SubscriptionFormSchema = yup.object().shape({
     .string()
     .min(10, "Deve ter no mínimo 10 caracteres")
     .required("A mensagem é obrigatória"),
+  recaptcha: yup
+    .boolean()
+    .required("Por favor, confirme que você não é um robô")
+    .oneOf([true], "Por favor, resolva o captcha"),
 });
 
 export const ContactForm = () => {
-  const { formState, handleSubmit, ...rest } = useForm<SubcriptionFormFields>({
-    resolver: yupResolver<yup.AnyObjectSchema>(SubscriptionFormSchema),
-  });
+  const { formState, handleSubmit, setValue, register, ...rest } =
+    useForm<SubcriptionFormFields>({
+      resolver: yupResolver<yup.AnyObjectSchema>(SubscriptionFormSchema),
+    });
+
+  const [captcha, setCaptcha] = useState<boolean>(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  useEffect(() => {
+    console.log(formState.errors);
+  }, [formState.errors]);
+
+  useEffect(() => {
+    register("recaptcha", { required: true, value: false });
+  }, [register]);
+
+  useEffect(() => {
+    if (captcha) {
+      setValue("recaptcha", captcha);
+    }
+  }, [captcha, setValue]);
+
+  const onCaptchaChange = useCallback((value: string | null) => {
+    if (!value) {
+      setCaptcha(false);
+    }
+
+    setCaptcha(Boolean(value));
+  }, []);
 
   const [submitButtonState, setSubmitButtonState] = useState<
     "default" | "loading" | "success"
@@ -67,17 +100,23 @@ export const ContactForm = () => {
   };
 
   const submitForm = useCallback(async (data: SubcriptionFormFields) => {
-    try {
-      const res = await axios.post("/api/contact", data);
-      console.log(res.data);
-    } catch (error) {
-      console.log(error);
+    if (!data.recaptcha) {
+      return;
     }
-    console.log(data);
+
+    if (data.recaptcha) {
+      try {
+        const res = await axios.post("/api/contact", data);
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+      console.log(data);
+    }
   }, []);
 
   return (
-    <FormProvider {...{ formState, handleSubmit, ...rest }}>
+    <FormProvider {...{ formState, handleSubmit, setValue, register, ...rest }}>
       <S.Wrapper
         onSubmit={handleSubmit(submitForm)}
         $isSubmitSuccessful={isSubmitSuccessful}
@@ -105,6 +144,10 @@ export const ContactForm = () => {
             disabled={isSubmitSuccessful}
           />
         </S.FieldsContainer>
+        {!isSubmitSuccessful && (
+          <ReCaptcha ref={recaptchaRef} onChange={onCaptchaChange} />
+        )}
+
         <S.SuccessMessage open={isSubmitSuccessful}>
           Obrigado por seu contato! {"👋🏻"}
           <span>

@@ -32,7 +32,6 @@ export const FieldsContainer = styled.div`
   justify-content: center;
   width: 100%;
   gap: 1.5rem;
-  margin: 2.5rem 0 1.5rem;
 
   *:disabled {
     display: none;
@@ -56,6 +55,10 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
       $isSubmitSuccessful ? "none" : "flex"};
   }
   overflow: hidden;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
   background: ${({ theme }) => theme.colors.blue.medium};
   border-radius: 1rem;
