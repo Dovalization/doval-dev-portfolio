@@ -51,10 +51,10 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
           ))}
         </S.Icons>
         <S.ButtonsContainer>
-          <Button href={project.links.live} icon={Globe}>
+          <Button link={project.links.live} icon={Globe}>
             Acessar
           </Button>
-          <Button href={project.links.code} icon={Code}>
+          <Button link={project.links.code} icon={Code}>
             Github
           </Button>
         </S.ButtonsContainer>

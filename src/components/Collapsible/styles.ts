@@ -111,6 +111,8 @@ export const Icons = styled.div`
 `;
 
 export const ButtonsContainer = styled.div`
+  max-width: 100%;
+  width: 100%;
   flex-direction: column;
   display: flex;
   gap: 1rem;
