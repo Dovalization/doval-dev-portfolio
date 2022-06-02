@@ -96,8 +96,7 @@ const mockProjects: Project[] = [
       "Desenvolvido para Papori - Get Social, Maria Luiza - Centro de Estética é uma estética localizada na região de Cascais em Portugal. Desenvolvido utizando Wordpress foi mais uma entrega na qual o cliente ficou plenamente satisfeito com os resultados, além de gerar tráfego para o comércio local.",
     id: "4",
     links: {
-      code: "https://github.com/",
-      live: "https://www.google.com/",
+      live: "http://marialuiza.pt/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
     title: "Maria Luiza - Centro de Estética",
@@ -109,7 +108,7 @@ const mockProjects: Project[] = [
       "Dr. João Diogo Martins é um Otorrinolaringologista atuando em Lisboa, Portugal. O site institucional foi desenvolvido para Papori - Get Social em mais uma parceria que resultou na plena satisfação do cliente.Especialista em Otorrinolaringologia geral, cirurgia endoscópica nasal e sinusale vertigem.",
     id: "5",
     links: {
-      live: "https://https://drjoaodiogomartins.pt/",
+      live: "https://drjoaodiogomartins.pt/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
     title: "Dr. João Diogo Martins - Otorrinolaringologista",
