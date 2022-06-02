@@ -69,10 +69,10 @@ const mockProjects: Project[] = [
     id: "2",
     banner: "/images/wonderbox-banner.png",
     logo: "/images/wonderbox-logo.png",
-    title: "Wonderbox - The Adventure Maker",
+    title: "Wonderbox",
     stack: ["JavaScript", "HTML", "CSS"],
     description:
-      "Criar e explorar são a essência do Wonderbox, um jogo do tipo action-adventure que tem como cenário belíssimos dioramas. Os jogadores descobrem esse universo em expansão junto com amigos ou familiares, onde eles podem criar e compartilhar suas próprias aventuras.<br/><br/>Wonderbox toca o lado mais criativo e exploratório dos gamers, entregando possibilidades  infinitas de jogar usando a imaginação. Ao jogar, os jogadores  percorrem (sozinhos ou com um grupo de amigos) belíssimos dioramas do tamanho da tela, onde cada espaço e cada bloco foi desenhado com cuidado para que a aventura aconteça. Eles encaram uma jornada cheia de desafios, inimigos, puzzles e plataformas.<br/><br/>Cada desafio, como as aventuras, são ilimitados. E escalam ainda mais quando você reúne os amigos, cria um grupo e todos se divertem ao máximo explorando juntos!<br/><br/>No modo de criação, os jogadores garantem todas as ferramentas para construir suas próprias aventuras com facilidade: livros, personagens e itens como espadas e ganchos para escalada. Cada um vem com suas especificações de ações e comportamento, permitindo que os jogadores criem desafios e cenários usando as mesmas funcionalidades que os próprios desenvolvedores usam.<br/><br/>Veja como blocos se combinam magicamente em estruturas fascinantes para construir ambientes, dando vida a personagens customizados, tesouros ocultos, inimigos espreitadores e encontros épicos. Tudo otimizado para facilitar que os jogadores possam publicar e compartilhar suas novas aventuras com amigos e outros jogadores do mundo todo. Gamers de todas as idades podem mergulhar nesse jogo único, que é uma novidade no gênero builder, criado pelo já premiado estúdio AQUIRIS.",
+      "Criar e explorar são a essência do Wonderbox, um jogo do tipo action-adventure que tem como cenário belíssimos dioramas.  Os jogadores descobrem esse universo em expansão junto com amigos ou familiares, onde eles podem criar e compartilhar suas próprias aventuras.",
     links: {
       live: "https://www.playwonderbox.com/",
     },
@@ -87,7 +87,7 @@ const mockProjects: Project[] = [
       live: "https://delparaiso.com.br/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
-    title: "Del Paraiso - Residencial",
+    title: "Del Paraíso",
   },
   {
     banner: "/images/maria-luiza-banner.jpg",
@@ -99,7 +99,7 @@ const mockProjects: Project[] = [
       live: "http://marialuiza.pt/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
-    title: "Maria Luiza - Centro de Estética",
+    title: "Maria Luiza",
   },
   {
     banner: "/images/dr-joao-banner.jpg",
@@ -111,7 +111,7 @@ const mockProjects: Project[] = [
       live: "https://drjoaodiogomartins.pt/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
-    title: "Dr. João Diogo Martins - Otorrinolaringologista",
+    title: "Dr. João Diogo Martins",
   },
   {
     banner: "/images/pmadv-banner.jpg",
@@ -123,7 +123,7 @@ const mockProjects: Project[] = [
       live: "http://pmadv.com.br/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
-    title: "Pereira & Maron - Advogados Associados",
+    title: "Pereira & Maron",
   },
 ];
 
