@@ -3,7 +3,6 @@ import sendgrid from "@sendgrid/mail";
 const getClient = () => {
   if (process.env.SENDGRID_API_KEY) {
     sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
-    console.log("SendGrid API Key set");
   }
   return sendgrid;
 };
