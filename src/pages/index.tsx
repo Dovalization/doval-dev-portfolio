@@ -18,7 +18,7 @@ export interface HomeProps {
 const Home: NextPage<HomeProps> = ({ title }) => {
   return (
     <>
-      <NextSeo title="Home" />
+      <NextSeo />
       <HomeLayout title={title} />
     </>
   );
