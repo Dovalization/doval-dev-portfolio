@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const ButtonLink = ({ children, link, icon: Icon }: ButtonProps) => {
   return (
     <Link href={link!} passHref>
-      <S.Wrapper as={"a"}>
+      <S.Wrapper as={"a"} target="_blank">
         <S.ButtonContents>
           <S.Label>{children}</S.Label>
           {Icon && (
