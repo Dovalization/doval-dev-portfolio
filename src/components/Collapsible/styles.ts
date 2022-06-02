@@ -103,7 +103,7 @@ export const Description = styled.p`
 `;
 
 export const Icons = styled.div`
-  margin-bottom: 5rem;
+  margin: 2.5rem 0;
   display: flex;
   gap: 1rem;
 `;

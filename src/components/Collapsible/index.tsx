@@ -46,19 +46,25 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
       </S.Banner>
       <S.Content $isOpen={isOpen}>
         <S.Title>{project.title}</S.Title>
-        <S.Description>{project.description}</S.Description>
+        <S.Description
+          dangerouslySetInnerHTML={{ __html: project.description }}
+        />
         <S.Icons>
           {project.stack.map((item, index) => (
             <TechIcon key={index} type={item} />
           ))}
         </S.Icons>
         <S.ButtonsContainer>
-          <Button link={project.links.live} icon={Globe}>
-            Acessar
-          </Button>
-          <Button link={project.links.code} icon={Code}>
-            Github
-          </Button>
+          {project.links.live && (
+            <Button link={project.links.live} icon={Globe}>
+              Acessar
+            </Button>
+          )}
+          {project.links.code && (
+            <Button link={project.links.code} icon={Code}>
+              Github
+            </Button>
+          )}
         </S.ButtonsContainer>
       </S.Content>
     </S.Wrapper>
