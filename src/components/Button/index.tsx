@@ -4,22 +4,50 @@ import { ButtonHTMLAttributes } from "react";
 import * as S from "./styles";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  link?: string;
   icon?: StyledIcon;
-  href?: string;
 }
 
-export const Button = ({
-  children,
-  onClick,
-  icon: Icon,
-  href,
-}: ButtonProps) => {
+const ButtonLink = ({ children, link, icon: Icon }: ButtonProps) => {
   return (
-    <Link href={href || "#"} passHref>
-      <S.Wrapper onClick={onClick} as={href ? "a" : "button"}>
-        {children}
-        {Icon && <Icon size={20} />}
+    <Link href={link!} passHref>
+      <S.Wrapper as={"a"}>
+        <S.ButtonContents>
+          <S.Label>{children}</S.Label>
+          {Icon && (
+            <S.IconContainer>
+              <Icon />
+            </S.IconContainer>
+          )}
+        </S.ButtonContents>
       </S.Wrapper>
     </Link>
   );
+};
+
+const PlainButton = ({ children, icon: Icon, ...rest }: ButtonProps) => {
+  return (
+    <S.Wrapper {...rest}>
+      <S.ButtonContents>
+        <S.Label>{children}</S.Label>
+        {Icon && (
+          <S.IconContainer>
+            <Icon />
+          </S.IconContainer>
+        )}
+      </S.ButtonContents>
+    </S.Wrapper>
+  );
+};
+
+export const Button = ({ children, link, ...props }: ButtonProps) => {
+  if (link) {
+    return (
+      <ButtonLink link={link} {...props}>
+        {children}
+      </ButtonLink>
+    );
+  }
+
+  return <PlainButton {...props}>{children}</PlainButton>;
 };
