@@ -1,8 +1,6 @@
 import { Button } from "@/components/Button";
 import { Project } from "@/types/common";
 import { TechIcon } from "@components/TechIcon";
-import banner from "@public/images/project-banner.jpg";
-import logo from "@public/images/project-logo.png";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import { Code, Globe } from "styled-icons/feather/";
@@ -28,17 +26,21 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
     <S.Wrapper $isOpen={isOpen}>
       <S.Banner onClick={handleClick} $isOpen={isOpen}>
         <Image
-          src={banner}
+          src={project.banner}
           alt="Banner"
+          width={"2148px"}
+          height={"650px"}
           layout="responsive"
           objectFit="cover"
         />
         <S.LogoWrapper $isOpen={isOpen}>
           <Image
-            src={logo}
+            src={project.logo}
             alt="Logo"
             layout="responsive"
             objectFit="contain"
+            width={"100%"}
+            height={"100%"}
           />
         </S.LogoWrapper>
       </S.Banner>

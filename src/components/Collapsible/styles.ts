@@ -48,13 +48,11 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    max-width: 18rem;
+    max-width: 20rem;
   }
 `;
 
 export const Banner = styled.div<CollapsibleStyleProps>`
-  max-height: 30rem;
-  overflow: hidden;
   position: relative;
 
   &::after {
