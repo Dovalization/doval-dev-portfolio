@@ -13,6 +13,7 @@ export const Header = () => {
             alt="Doval Dev Logo"
             layout="responsive"
             objectFit="contain"
+            priority
           />
         </S.LogoWrapper>
         <S.SocialIconsContainer>

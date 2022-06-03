@@ -19,7 +19,7 @@ export const HeroSection = ({ title }: HeroSectionProps) => {
         <S.HeroContainer>
           <S.HeroBackground>
             <video
-              src="/videos/doval-dev-hero-bg.mp4"
+              src="/videos/doval-dev-hero-bg.webm"
               autoPlay
               loop
               muted
