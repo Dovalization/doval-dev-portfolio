@@ -46,6 +46,12 @@ export const ContactForm = () => {
   const [captcha, setCaptcha] = useState<boolean>(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
+  const [submitButtonState, setSubmitButtonState] = useState<
+    "default" | "loading" | "success"
+  >("default");
+
+  const { isSubmitSuccessful, isSubmitting } = formState;
+
   useEffect(() => {
     register("recaptcha", { required: true, value: false });
   }, [register]);
@@ -64,11 +70,6 @@ export const ContactForm = () => {
     setCaptcha(Boolean(value));
   }, []);
 
-  const [submitButtonState, setSubmitButtonState] = useState<
-    "default" | "loading" | "success"
-  >("default");
-
-  const { isSubmitSuccessful, isSubmitting } = formState;
   useEffect(() => {
     if (isSubmitSuccessful) {
       setSubmitButtonState("success");
