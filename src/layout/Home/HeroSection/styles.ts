@@ -20,7 +20,12 @@ export const HeroContainer = styled.div`
   grid-template-columns: 1fr;
   place-content: center;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  max-height: 50vh;
   z-index: 4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    max-height: unset;
+  }
 `;
 
 export const HeroBackground = styled.div`

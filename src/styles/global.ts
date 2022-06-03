@@ -47,10 +47,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${({ theme }) => theme.fontSizes.extraLarge};
+    font-size: ${({ theme }) => theme.fontSizes.large};
     text-transform: uppercase;
     font-weight: 800;
     text-align: center;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      font-size: ${({ theme }) => theme.fontSizes.extraLarge};
+    }
 
     > span {
       color: ${({ theme }) => theme.colors.accent.regular};
