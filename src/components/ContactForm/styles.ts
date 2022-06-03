@@ -63,11 +63,12 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   background: ${({ theme }) => theme.colors.blue.medium};
   border-radius: 1rem;
   width: 100%;
-  padding: 5rem 2.5rem;
+  padding: 2.5rem;
   place-self: center;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: 5rem 2.5rem;
     max-width: 70%;
     padding: 4rem 6rem;
   }
