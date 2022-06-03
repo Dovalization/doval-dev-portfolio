@@ -19,7 +19,7 @@
     "axios": "^0.27.2",
     "embla-carousel-autoplay": "^6.2.0",
     "embla-carousel-react": "^6.2.0",
-    "framer-motion": "^6.3.6",
+    "framer-motion": "^6.3.10",
     "grapheme-splitter": "^1.0.4",
     "next": "12.1.6",
     "next-seo": "^5.4.0",

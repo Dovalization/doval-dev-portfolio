@@ -40,14 +40,17 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   top: 50%;
   left: 0;
   right: 0;
-  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
   max-width: 10rem;
   z-index: 2;
-  transform: ${({ $isOpen }) =>
-    $isOpen ? "translateY(-50%)" : "translateY(-25%)"};
+  transform: translateY(-50%);
+
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+    transform: ${({ $isOpen }) =>
+      $isOpen ? "translateY(-50%)" : "translateY(-25%)"};
+
     max-width: 15rem;
   }
 
@@ -69,17 +72,25 @@ export const Banner = styled.div<CollapsibleStyleProps>`
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
     transition: opacity 0.2s ease-in-out;
-    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+    opacity: 0.5;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+    }
   }
 
   &:hover::after {
-    opacity: 1;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      opacity: 1;
+    }
   }
 
   &:hover {
-    ${LogoWrapper} {
-      opacity: 1;
-      transform: translateY(-50%);
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      ${LogoWrapper} {
+        opacity: 1;
+        transform: translateY(-50%);
+      }
     }
   }
 `;
