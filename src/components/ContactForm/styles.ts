@@ -56,7 +56,7 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   }
   overflow: hidden;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-direction: column;
   align-items: center;
   height: 100%;
@@ -82,7 +82,6 @@ export const SuccessMessage = styled.dialog`
 
     /* Display & Box Model */
     align-items: center;
-    margin-bottom: 2.5rem;
 
     display: flex;
     flex-direction: column;

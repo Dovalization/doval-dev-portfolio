@@ -150,7 +150,7 @@ export const ContactForm = () => {
           <span>
             Podes também conhecer mais sobre mim em meu{" "}
             <Link href="https://www.linkedin.com/in/guilherme-doval/">
-              LinkedIn
+              LinkedIn.
             </Link>
           </span>
         </S.SuccessMessage>
