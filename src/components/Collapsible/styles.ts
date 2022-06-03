@@ -26,6 +26,10 @@ export const Wrapper = styled.article<CollapsibleStyleProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: ${({ $isOpen }) => ($isOpen ? "100%" : "95%")};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     max-width: ${({ $isOpen }) => ($isOpen ? "75%" : "70%")};
   }
 `;

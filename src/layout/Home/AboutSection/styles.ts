@@ -2,7 +2,10 @@ import { Container } from "@/styles/global";
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  margin: 20rem 0;
+  margin: 5rem 0;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    margin: 20rem 0;
+  }
 `;
 
 export const ContentContainer = styled(Container)`
