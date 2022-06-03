@@ -47,10 +47,6 @@ export const ContactForm = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   useEffect(() => {
-    console.log(formState.errors);
-  }, [formState.errors]);
-
-  useEffect(() => {
     register("recaptcha", { required: true, value: false });
   }, [register]);
 
