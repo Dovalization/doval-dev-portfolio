@@ -1,5 +1,15 @@
 import { Container } from "@/styles/global";
-import styled from "styled-components";
+import { motion } from "framer-motion";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Wrapper = styled.section`
   background: ${({ theme }) => theme.colors.blue.dark};
@@ -7,6 +17,7 @@ export const Wrapper = styled.section`
   margin-top: -5rem;
   padding: 10rem 0 5rem;
 
+  animation: ${fadeIn} 8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   // add a divider to the top of the section
   &::before {
     content: "";
@@ -60,7 +71,7 @@ export const BackgroundWrapper = styled.div`
 
 /*  */
 
-export const ProjectsContainer = styled(Container)`
+export const ProjectsContainer = styled(motion(Container))`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;

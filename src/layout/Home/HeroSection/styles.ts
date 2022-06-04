@@ -1,5 +1,17 @@
 import { Container } from "@styles/global";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0.5;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.black};
@@ -23,6 +35,7 @@ export const HeroContainer = styled.div`
   max-height: 50vh;
   z-index: 4;
 
+  animation: ${fadeInUp} 1s ease-out;
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     max-height: unset;
   }
