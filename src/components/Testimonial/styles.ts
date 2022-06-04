@@ -37,7 +37,8 @@ export const QuoteWrapper = styled.div`
 `;
 export const AuthorInfo = styled.div``;
 
-export const AuthorName = styled.h3`
+export const AuthorName = styled.address`
+  font-style: normal;
   font-size: 1.5rem;
   font-weight: 600;
 `;
