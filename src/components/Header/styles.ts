@@ -1,5 +1,4 @@
 import { Container } from "@/styles/global";
-import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 export const Wrapper = styled.header``;
@@ -18,7 +17,7 @@ const fadeInDown = keyframes`
   }
 `;
 
-export const ContentContainer = styled(motion(Container))`
+export const ContentContainer = styled(Container)`
   padding: 2.5rem 0;
   display: flex;
   align-items: center;
