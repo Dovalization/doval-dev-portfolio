@@ -30,6 +30,11 @@ export const AvatarWrapper = styled.div`
   height: 5rem;
 `;
 
+export const QuoteWrapper = styled.div`
+  max-width: 4rem;
+  width: 100%;
+  height: 100%;
+`;
 export const AuthorInfo = styled.div``;
 
 export const AuthorName = styled.h3`

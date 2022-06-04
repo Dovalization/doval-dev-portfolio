@@ -12,7 +12,15 @@ export const Testimonial = ({
   return (
     <S.Wrapper>
       <S.ContentContainer>
-        <Image src="/images/quote.svg" width={50} height={50} alt="" />
+        <S.QuoteWrapper>
+          <Image
+            src="/images/quote.svg"
+            alt="quote"
+            layout="responsive"
+            width="100%"
+            height="100%"
+          />
+        </S.QuoteWrapper>
         <S.Text>{text}</S.Text>
       </S.ContentContainer>
       <S.AuthorContainer>
