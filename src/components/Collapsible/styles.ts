@@ -43,6 +43,7 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   max-width: 10rem;
   z-index: 2;
   transform: translateY(-50%);
+  user-select: none;
 
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
