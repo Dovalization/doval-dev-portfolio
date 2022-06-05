@@ -14,17 +14,7 @@ const fadeIn = keyframes`
 
 export const Wrapper = styled.div`
   margin: 0;
-  display: block;
   position: relative;
   animation: ${fadeIn} 0.5s ease-in-out;
   width: 100%;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
 `;

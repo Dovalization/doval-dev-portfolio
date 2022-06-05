@@ -135,9 +135,6 @@ export const ContactForm = () => {
             disabled={isSubmitSuccessful}
           />
         </S.FieldsContainer>
-        {!isSubmitSuccessful && (
-          <ReCaptcha ref={recaptchaRef} size="invisible" />
-        )}
 
         <S.SuccessMessage open={isSubmitSuccessful}>
           Obrigado por seu contato! {"👋🏻"}
@@ -155,6 +152,7 @@ export const ContactForm = () => {
         >
           {submitButtonText[submitButtonState]}
         </Button>
+        <ReCaptcha ref={recaptchaRef} size="invisible" hidden={true} />
       </S.Wrapper>
     </FormProvider>
   );

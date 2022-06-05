@@ -42,7 +42,7 @@ export const Wrapper = styled.div<InputStyleProps>`
   ${({ $isFocused }) =>
     $isFocused &&
     css`
-      border-color: ${({ theme }) => theme.colors.white};
+      border-color: ${({ theme }) => theme.colors.accent.regular};
       transition: border-color 0.2s ease-in-out;
     `}
 

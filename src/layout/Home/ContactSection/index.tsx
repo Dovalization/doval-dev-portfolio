@@ -1,20 +1,46 @@
+import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
+import { SocialIcon } from "@/components/SocialIcon";
+import { Mail, MapPin, Phone } from "styled-icons/feather/";
 import * as S from "./styles";
 
 export const ContactSection = () => {
   return (
     <S.Wrapper>
       <S.ContentContainer>
-        <div>
+        <S.LeftContainer>
           <S.Heading>No que posso te ajudar?</S.Heading>
-          <S.Subheading>
-            Ficarei feliz em te ajudar a esclarecer qualquer dúvida que você
-            tenha sobre meus serviços.
-          </S.Subheading>
-          <S.Subheading>
-            Orçamentos sem compromisso, entre em contato comigo.
-          </S.Subheading>
-        </div>
+          <div>
+            <S.Subheading>
+              Ficarei feliz em te ajudar a esclarecer qualquer dúvida que você
+              tenha sobre meus serviços.
+            </S.Subheading>
+            <S.Subheading>
+              Orçamentos sem compromisso, entre em contato comigo.
+            </S.Subheading>
+          </div>
+          <S.ContactsContainer>
+            <Button link="tel:+5551995808044" icon={Phone}>
+              +55 (51) 9 9580-8044
+            </Button>
+            <Button link="mailto:me@doval.dev" icon={Mail}>
+              me@doval.dev
+            </Button>
+            <Button
+              link="https://pt.wikipedia.org/wiki/Porto_Alegre"
+              icon={MapPin}
+            >
+              Porto Alegre, Brasil
+            </Button>
+          </S.ContactsContainer>
+          <S.SocialLinksContainer>
+            <SocialIcon type="GitHub" url="https://github.com/dovalization" />
+            <SocialIcon
+              type="LinkedIn"
+              url="https://www.linkedin.com/in/guilherme-doval/"
+            />
+          </S.SocialLinksContainer>
+        </S.LeftContainer>
         <ContactForm />
       </S.ContentContainer>
     </S.Wrapper>

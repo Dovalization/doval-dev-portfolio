@@ -42,7 +42,7 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   position: relative;
   ${Button} {
     position: relative;
-    margin-right: auto;
+    margin: 2rem 0 0;
   }
 
   ${Title} {
@@ -56,7 +56,6 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   }
   overflow: hidden;
   display: flex;
-  gap: 2rem;
   flex-direction: column;
   align-items: center;
   height: 100%;
