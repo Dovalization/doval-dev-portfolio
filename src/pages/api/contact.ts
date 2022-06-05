@@ -49,7 +49,11 @@ export default async function handler(
       payload.text,
       payload.name
     );
-    return res.status(200).json(response);
+    return res.status(200).json({
+      message: "Email sent",
+      response: response,
+      tokenVerified: captchaSuccess,
+    });
   } catch (err) {
     return res.status(500).json(JSON.stringify(err, null, 2));
   }
