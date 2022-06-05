@@ -12,7 +12,7 @@ export const Wrapper = styled.article<CollapsibleStyleProps>`
   max-width: 100%;
   margin: 0.2rem;
   outline: 4px solid transparent;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: ${({ $isOpen }) =>
     $isOpen
@@ -111,6 +111,7 @@ export const Content = styled.div<CollapsibleStyleProps>`
 
 export const Title = styled.h2`
   margin-bottom: 0.5rem;
+  text-transform: capitalize;
 `;
 
 export const Description = styled.p`
@@ -122,6 +123,7 @@ export const Icons = styled.div`
   margin: 2.5rem 0;
   display: flex;
   gap: 1rem;
+  color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
 export const ButtonsContainer = styled.div`
