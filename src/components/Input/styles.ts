@@ -18,8 +18,8 @@ export const Container = styled(motion.div)`
 export const Wrapper = styled.div<InputStyleProps>`
   position: relative;
   width: 100%;
-  padding: 1rem;
-  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
 
   outline: 3px solid ${({ theme }) => theme.colors.blue.dark};
   background: ${({ theme }) => theme.colors.blue.dark};
@@ -50,7 +50,6 @@ export const Wrapper = styled.div<InputStyleProps>`
     font-weight: medium;
     border: none;
     outline: none;
-    font-weight: 600;
     color: ${({ theme }) => theme.colors.white};
 
     ::placeholder {
