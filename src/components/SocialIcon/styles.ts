@@ -5,12 +5,16 @@ export const Wrapper = styled.a`
   display: inline-block;
   border-radius: 50%;
   padding: 0.8rem;
-  background-color: ${({ theme }) => theme.colors.accent.dark};
+  background-color: transparent;
+  border: 3px solid ${({ theme }) => theme.colors.white};
+  transition: all 0.2s ease-in-out;
 
   &:hover {
+    transform: scale(1.1);
+    border: 3px solid ${({ theme }) => theme.colors.accent.regular};
     background-color: ${({ theme }) => theme.colors.accent.regular};
     ${StyledIconBase} {
-      transform: scale(1.2);
+      color: ${({ theme }) => theme.colors.black};
     }
   }
 
@@ -19,7 +23,6 @@ export const Wrapper = styled.a`
     height: 1.5rem;
     color: ${({ theme }) => theme.colors.white};
     stroke-width: 2;
-    transition: transform 0.1s ease-in-out;
   }
   transition: background-color 0.2s ease-in-out;
 `;
