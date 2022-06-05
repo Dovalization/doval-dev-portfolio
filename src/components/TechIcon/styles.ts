@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     width: 2.5rem;
     height: 2.5rem;
     color: ${({ theme }) => theme.colors.white};
+    opacity: 0.25;
   }
 `;
 
