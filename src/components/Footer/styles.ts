@@ -22,6 +22,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const Copyright = styled.span`
+  display: inline;
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
   font-size: ${({ theme }) => theme.fontSizes.extraSmall};

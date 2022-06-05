@@ -1,6 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { InputHTMLAttributes, useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
+import { AlertCircle } from "styled-icons/feather/";
 import * as A from "./animations";
 import * as S from "./styles";
 
@@ -32,6 +33,7 @@ export const Input = ({ name, ...props }: InputProps) => {
   return (
     <AnimatePresence>
       <S.Container>
+        <S.Label htmlFor={name}>{name}</S.Label>
         <S.Wrapper
           $isErrored={!!errors[name]}
           $isFilled={isFilled}
@@ -54,7 +56,10 @@ export const Input = ({ name, ...props }: InputProps) => {
           )}
         </S.Wrapper>
         {errors[name] && (
-          <S.Error {...A.ErrorVariant}>{errors[name]?.message}</S.Error>
+          <S.ErrorContainer {...A.ErrorVariant}>
+            <AlertCircle />
+            <S.Error>{errors[name]?.message}</S.Error>
+          </S.ErrorContainer>
         )}
       </S.Container>
     </AnimatePresence>

@@ -8,7 +8,7 @@ export const Wrapper = styled.button`
   border: 3px solid ${({ theme }) => theme.colors.white};
   border-radius: 4rem;
   outline: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

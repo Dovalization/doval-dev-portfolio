@@ -15,6 +15,13 @@ export const Footer = () => {
             objectFit="contain"
           />
         </S.LogoWrapper>
+        <S.Copyright>
+          This site is protected by reCAPTCHA and the
+          <br /> Google{" "}
+          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+          the <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
+          apply.
+        </S.Copyright>
         <S.Copyright>{`Copyright © Doval Dev ${new Date().getFullYear()}`}</S.Copyright>
         <S.SocialIconsContainer>
           <SocialIcon type="GitHub" url="https://github.com/dovalization" />

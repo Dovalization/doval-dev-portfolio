@@ -32,9 +32,8 @@ export const AboutSection = () => {
           </S.Copy>
           <S.ButtonContainer>
             <Button
-              link="documents/guilherme-doval-cv-2022.pdf"
+              link="/documents/guilherme-doval-cv-2022.pdf"
               icon={Download}
-              download
             >
               Download CV
             </Button>

@@ -20,8 +20,7 @@ const fadeInUp = keyframes`
 `;
 
 export const Title = styled.h2`
-  text-align: center;
-
+  width: 100%;
   span {
     color: ${({ theme }) => theme.colors.accent.regular};
   }
@@ -32,7 +31,7 @@ export const FieldsContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 2rem;
+  gap: 2.5rem;
 
   *:disabled {
     display: none;
@@ -43,7 +42,7 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   position: relative;
   ${Button} {
     position: relative;
-    margin: 0 auto;
+    margin-right: auto;
   }
 
   ${Title} {
@@ -65,13 +64,10 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   border-radius: 1rem;
   width: 100%;
   padding: 2.5rem;
-  place-self: center;
+  place-self: end;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    padding: 5rem 2.5rem;
-    max-width: 70%;
-    padding: 4rem 6rem;
   }
 `;
 

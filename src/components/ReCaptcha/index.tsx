@@ -9,6 +9,7 @@ export const ReCaptcha = forwardRef<ReCAPTCHA, RecaptchaProps>((props, ref) => (
       ref={ref}
       sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
       {...props}
+      size="invisible"
     />
   </S.Wrapper>
 ));

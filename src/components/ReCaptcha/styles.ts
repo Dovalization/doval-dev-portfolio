@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   display: block;
   position: relative;
   animation: ${fadeIn} 0.5s ease-in-out;
+  width: 100%;
 
   iframe {
     position: absolute;
