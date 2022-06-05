@@ -1,4 +1,5 @@
 import { Wrapper as Button } from "@components/Button/styles";
+import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 interface ContactFormStyleProps {
@@ -26,12 +27,12 @@ export const Title = styled.h2`
   }
 `;
 
-export const FieldsContainer = styled.div`
+export const FieldsContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 1.5rem;
+  gap: 2rem;
 
   *:disabled {
     display: none;

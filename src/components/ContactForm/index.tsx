@@ -121,20 +121,23 @@ export const ContactForm = () => {
         <S.Title>
           Entre em <span>Contato</span>
         </S.Title>
-        <S.FieldsContainer>
+        <S.FieldsContainer layout="position">
           <Input
             name="name"
+            id="name"
             type="text"
             placeholder="Nome"
             disabled={isSubmitSuccessful}
           />
           <Input
+            id="email"
             name="email"
             type="email"
             placeholder="E-mail"
             disabled={isSubmitSuccessful}
           />
           <Input
+            id="message"
             name="message"
             type="textarea"
             placeholder="Mensagem..."
