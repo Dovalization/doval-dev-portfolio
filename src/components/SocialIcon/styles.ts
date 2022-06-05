@@ -5,26 +5,24 @@ export const Wrapper = styled.a`
   display: inline-block;
   border-radius: 50%;
   padding: 0.8rem;
-  background-color: transparent;
-  border: 3px solid ${({ theme }) => theme.colors.white};
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-    border: 3px solid ${({ theme }) => theme.colors.accent.regular};
-    background-color: ${({ theme }) => theme.colors.accent.regular};
-    ${StyledIconBase} {
-      color: ${({ theme }) => theme.colors.black};
-    }
-  }
+  border: 3px solid ${({ theme }) => theme.colors.accent.regular};
+  background-color: ${({ theme }) => theme.colors.accent.regular};
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   ${StyledIconBase} {
     width: 1.5rem;
     height: 1.5rem;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
     stroke-width: 2;
   }
-  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+
+    ${StyledIconBase} {
+      color: ${({ theme }) => theme.colors.white};
+    }
+  }
 `;
 
 export const VisuallyHidden = styled.span`

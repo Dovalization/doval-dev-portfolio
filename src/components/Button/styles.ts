@@ -5,7 +5,6 @@ export const Wrapper = styled.button`
   /* Positioning */
 
   /* Display & Box Model */
-  border: 3px solid ${({ theme }) => theme.colors.white};
   border-radius: 4rem;
   outline: none;
   padding: 0.75rem 1.5rem;
@@ -18,7 +17,9 @@ export const Wrapper = styled.button`
   /* Color */
   /* background: ${({ theme }) => theme.colors.accent.dark}; */
   background: transparent;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
+  background: ${({ theme }) => theme.colors.accent.regular};
+  border: 3px solid ${({ theme }) => theme.colors.accent.regular};
 
   /* Text */
   font-weight: bold;
@@ -26,13 +27,12 @@ export const Wrapper = styled.button`
   font-family: ${({ theme }) => theme.fonts.primary};
 
   /* Other */
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
-    background: ${({ theme }) => theme.colors.accent.regular};
-    border: 3px solid ${({ theme }) => theme.colors.accent.regular};
-    color: ${({ theme }) => theme.colors.black};
     transform: scale(1.1);
+    /* border: 3px solid ${({ theme }) => theme.colors.white}; */
+    color: ${({ theme }) => theme.colors.white};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
