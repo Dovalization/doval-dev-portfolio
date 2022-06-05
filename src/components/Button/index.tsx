@@ -13,12 +13,12 @@ const ButtonLink = ({ children, link, icon: Icon }: ButtonProps) => {
     <Link href={link!} passHref>
       <S.Wrapper as={"a"} target="_blank">
         <S.ButtonContents>
-          <S.Label>{children}</S.Label>
           {Icon && (
             <S.IconContainer>
               <Icon />
             </S.IconContainer>
           )}
+          <S.Label>{children}</S.Label>
         </S.ButtonContents>
       </S.Wrapper>
     </Link>
@@ -29,12 +29,12 @@ const PlainButton = ({ children, icon: Icon, ...rest }: ButtonProps) => {
   return (
     <S.Wrapper {...rest}>
       <S.ButtonContents>
-        <S.Label>{children}</S.Label>
         {Icon && (
           <S.IconContainer>
             <Icon />
           </S.IconContainer>
         )}
+        <S.Label>{children}</S.Label>
       </S.ButtonContents>
     </S.Wrapper>
   );

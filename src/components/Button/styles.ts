@@ -36,7 +36,7 @@ export const Wrapper = styled.button`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    max-width: fit-content;
+    max-width: 20rem;
   }
 `;
 
@@ -52,7 +52,7 @@ export const Label = styled.span`
 `;
 
 export const IconContainer = styled.div`
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   ${StyledIconBase} {
     stroke-width: 2;
     width: 1.25rem;
