@@ -8,14 +8,14 @@ interface SubcriptionFormFields {
   email: string;
   name: string;
   message: string;
-  recaptcha: string;
+  token: string;
 }
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { email, name, message, recaptcha }: SubcriptionFormFields = req.body;
+  const { email, name, message, token }: SubcriptionFormFields = req.body;
 
   async function verifyRecaptcha(token: string) {
     const url = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`;
@@ -35,7 +35,7 @@ export default async function handler(
   };
 
   try {
-    const captchaSuccess = await verifyRecaptcha(recaptcha);
+    const captchaSuccess = await verifyRecaptcha(token);
 
     if (!captchaSuccess) {
       return res.status(400).json({

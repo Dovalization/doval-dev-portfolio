@@ -15,7 +15,6 @@ interface SubcriptionFormFields {
   email: string;
   name: string;
   message: string;
-  recaptcha: string;
 }
 
 const SubscriptionFormSchema = yup.object().shape({
@@ -48,10 +47,6 @@ export const ContactForm = () => {
   const { isSubmitSuccessful, isSubmitting } = formState;
 
   useEffect(() => {
-    register("recaptcha", { required: true, value: "" });
-  }, [register]);
-
-  useEffect(() => {
     if (isSubmitSuccessful) {
       setSubmitButtonState("success");
     }
@@ -77,34 +72,36 @@ export const ContactForm = () => {
     success: "Enviado!",
   };
 
-  const onSubmitWithReCAPTCHA = useCallback(
-    async (data: SubcriptionFormFields) => {
-      const token = await recaptchaRef.current?.executeAsync();
+  const onSubmitWithReCAPTCHA = useCallback(async () => {
+    const token = await recaptchaRef.current?.executeAsync();
 
-      if (token) {
-        setValue("recaptcha", token);
-      }
+    if (!token) {
+      return;
+    }
 
-      return token;
-    },
-    [setValue]
-  );
+    return token;
+  }, []);
 
   const submitForm = useCallback(
-    async (data: SubcriptionFormFields) => {
-      const token = await onSubmitWithReCAPTCHA(data);
+    async (formData: SubcriptionFormFields) => {
+      const token = await onSubmitWithReCAPTCHA();
 
       if (!token) {
         return;
       }
 
+      const payload = {
+        ...formData,
+        token,
+      };
+
       try {
-        const res = await axios.post("/api/contact", data);
+        const res = await axios.post("/api/contact", payload);
         console.log(res.data);
       } catch (error) {
         console.log(error);
       }
-      console.log(data);
+      console.log(formData);
     },
     [onSubmitWithReCAPTCHA]
   );
