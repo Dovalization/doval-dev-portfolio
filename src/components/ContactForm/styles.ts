@@ -64,7 +64,7 @@ export const Wrapper = styled.form<ContactFormStyleProps>`
   width: 100%;
   padding: 2.5rem;
   place-self: end;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
   }

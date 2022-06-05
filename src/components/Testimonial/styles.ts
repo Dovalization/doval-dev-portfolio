@@ -6,6 +6,7 @@ export const ContentContainer = styled.div`
   border-radius: 1rem;
   background: ${({ theme }) => theme.colors.blue.medium};
   padding: 2.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 `;
 
 export const AuthorContainer = styled.div`
@@ -24,7 +25,6 @@ export const Text = styled.p`
 
 export const AvatarWrapper = styled.div`
   border-radius: 50%;
-  outline: 3px solid ${({ theme }) => theme.colors.accent.regular};
   overflow: hidden;
   width: 5rem;
   height: 5rem;
