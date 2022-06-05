@@ -5,10 +5,10 @@ export const Wrapper = styled.button`
   /* Positioning */
 
   /* Display & Box Model */
-  border: none;
-  border-radius: 0.5rem;
+  border: 3px solid ${({ theme }) => theme.colors.white};
+  border-radius: 4rem;
   outline: none;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,11 +16,11 @@ export const Wrapper = styled.button`
   width: 100%;
 
   /* Color */
-  background: ${({ theme }) => theme.colors.accent.dark};
+  /* background: ${({ theme }) => theme.colors.accent.dark}; */
+  background: transparent;
   color: ${({ theme }) => theme.colors.white};
 
   /* Text */
-  text-transform: uppercase;
   font-weight: bold;
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.primary};
@@ -30,10 +30,13 @@ export const Wrapper = styled.button`
 
   &:hover {
     background: ${({ theme }) => theme.colors.accent.regular};
+    border: 3px solid ${({ theme }) => theme.colors.accent.regular};
+    color: ${({ theme }) => theme.colors.black};
+    transform: scale(1.1);
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    max-width: 20rem;
+    max-width: fit-content;
   }
 `;
 
@@ -45,14 +48,14 @@ export const ButtonContents = styled.div`
 `;
 
 export const Label = styled.span`
-  padding: 0 1rem;
   font-size: ${({ theme }) => theme.fontSizes.small};
 `;
 
 export const IconContainer = styled.div`
+  margin-left: 0.5rem;
   ${StyledIconBase} {
     stroke-width: 2;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 `;
