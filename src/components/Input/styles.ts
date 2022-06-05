@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 interface InputStyleProps {
@@ -6,11 +7,19 @@ interface InputStyleProps {
   $isErrored: boolean;
 }
 
+export const Container = styled(motion.div)`
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+`;
+
 export const Wrapper = styled.div<InputStyleProps>`
   position: relative;
   width: 100%;
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
 
   outline: 3px solid ${({ theme }) => theme.colors.blue.dark};
   background: ${({ theme }) => theme.colors.blue.dark};
@@ -66,9 +75,9 @@ export const Wrapper = styled.div<InputStyleProps>`
   transition: outline-color 0.1s;
 `;
 
-export const Error = styled.span`
-  color: #ffd91a;
+export const Error = styled(motion.span)`
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 500;
-  text-align: right;
+  text-align: left;
   width: 100%;
 `;

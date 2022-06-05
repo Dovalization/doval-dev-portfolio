@@ -1,5 +1,7 @@
+import { AnimatePresence } from "framer-motion";
 import { InputHTMLAttributes, useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
+import * as A from "./animations";
 import * as S from "./styles";
 
 interface InputProps
@@ -28,29 +30,33 @@ export const Input = ({ name, ...props }: InputProps) => {
   }, [name, watch]);
 
   return (
-    <>
-      <S.Wrapper
-        $isErrored={!!errors[name]}
-        $isFilled={isFilled}
-        $isFocused={isFocused}
-      >
-        {props.type === "textarea" ? (
-          <textarea
-            {...props}
-            {...register(name)}
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
-          />
-        ) : (
-          <input
-            {...props}
-            {...register(name)}
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
-          />
+    <AnimatePresence>
+      <S.Container>
+        <S.Wrapper
+          $isErrored={!!errors[name]}
+          $isFilled={isFilled}
+          $isFocused={isFocused}
+        >
+          {props.type === "textarea" ? (
+            <textarea
+              {...props}
+              {...register(name)}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
+            />
+          ) : (
+            <input
+              {...props}
+              {...register(name)}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
+            />
+          )}
+        </S.Wrapper>
+        {errors[name] && (
+          <S.Error {...A.ErrorVariant}>{errors[name]?.message}</S.Error>
         )}
-      </S.Wrapper>
-      {errors[name] && <S.Error>{errors[name]?.message}</S.Error>}
-    </>
+      </S.Container>
+    </AnimatePresence>
   );
 };
