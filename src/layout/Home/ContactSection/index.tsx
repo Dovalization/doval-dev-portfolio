@@ -41,7 +41,9 @@ export const ContactSection = () => {
             />
           </S.SocialLinksContainer>
         </S.LeftContainer>
-        <ContactForm />
+        <S.RightContainer>
+          <ContactForm />
+        </S.RightContainer>
       </S.ContentContainer>
     </S.Wrapper>
   );

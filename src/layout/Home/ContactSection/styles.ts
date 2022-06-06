@@ -18,7 +18,6 @@ export const ContentContainer = styled(Container)`
   width: 100%;
   display: grid;
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    padding: 0 5%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10%;
   }
@@ -80,4 +79,17 @@ export const LeftContainer = styled.div`
   align-items: flex-start;
   width: 100%;
   height: auto;
+`;
+
+export const RightContainer = styled.div`
+  display: flex;
+  place-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.highRes}) {
+    margin-left: auto;
+    max-width: 80%;
+  }
 `;

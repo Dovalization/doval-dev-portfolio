@@ -18,10 +18,6 @@ export const ContentContainer = styled(Container)`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10%;
   }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.highRes}) {
-    padding: 0 5%;
-  }
 `;
 
 export const ImageWrapper = styled.div`
