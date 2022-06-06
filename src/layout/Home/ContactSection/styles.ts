@@ -30,7 +30,7 @@ export const Heading = styled.h2`
   margin-bottom: 2rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    margin: 0;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -53,11 +53,7 @@ export const ContactsContainer = styled.div`
   align-items: start;
   gap: 2rem;
   width: 100%;
-  margin: 2rem 0;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    margin: 0;
-  }
+  margin: 6rrem 0 2rem;
 `;
 
 export const SocialLinksContainer = styled.div`
@@ -75,8 +71,6 @@ export const SocialLinksContainer = styled.div`
 export const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   width: 100%;
   height: auto;
 `;
