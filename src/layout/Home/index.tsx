@@ -114,16 +114,41 @@ const mockProjects: Project[] = [
     title: "Dr. João Diogo Martins",
   },
   {
+    banner: "/images/5ej-banner.png",
+    logo: "/images/5ej-logo.svg",
+    description:
+      "A Academia Five Elements Jiu-Jitsu tem por missão o ensino e difusão do Gracie Jiu-Jitsu como um completo sistema de defesa pessoal, como estilo de vida e formação do carácter dos nossos alunos.",
+
+    id: "6",
+    links: {
+      live: "https://fiveelementsjiujitsu.com/",
+    },
+    stack: ["WordPress", "JavaScript", "HTML", "CSS"],
+    title: "Five Elements Jiu-Jitsu",
+  },
+  {
+    banner: "/images/upkd-banner.png",
+    logo: "/images/upkd-logo.png",
+    description:
+      "Associação fundada em 2008, a UPKD – União Portuguesa de Karate-Do nasceu do trabalho conjunto de uma mão-cheia dos alunos mais antigos do Mestre Raul Cerveira, um dos nomes maiores do Karate em Portugal.",
+    id: "7",
+    links: {
+      live: "https://upkd.org/",
+    },
+    stack: ["WordPress", "JavaScript", "HTML", "CSS"],
+    title: "União Portuguesa de Karate-Do",
+  },
+  {
     banner: "/images/pmadv-banner.jpg",
     logo: "/images/pmadv-logo.png",
-    description:
-      "A Pereira & Maron Advogados Associados presta assessoria aos seus clientes nas áreas de Societário e Empresas, Direito Civil, Fusões e Aquisições, Tributário, Imigração e Comércio Exterior. Nossa experiência cresce em conjunto com as demandas dos clientes. Correspondentes em Portugal e China (Lisboa e Macau).",
-    id: "6",
+    id: "7",
     links: {
       live: "http://pmadv.com.br/",
     },
     stack: ["WordPress", "JavaScript", "HTML", "CSS"],
     title: "Pereira & Maron",
+    description:
+      "A Pereira & Maron Advogados Associados presta assessoria aos seus clientes nas áreas de Societário e Empresas, Direito Civil, Fusões e Aquisições, Tributário, Imigração e Comércio Exterior. Nossa experiência cresce em conjunto com as demandas dos clientes. Correspondentes em Portugal e China (Lisboa e Macau).",
   },
 ];
 
