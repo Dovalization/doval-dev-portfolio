@@ -53,7 +53,7 @@ export const ContactsContainer = styled.div`
   align-items: start;
   gap: 2rem;
   width: 100%;
-  margin: 6rrem 0 2rem;
+  margin: 6rem 0 2rem;
 `;
 
 export const SocialLinksContainer = styled.div`
