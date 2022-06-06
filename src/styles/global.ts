@@ -48,8 +48,8 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.large};
-    text-transform: uppercase;
     font-weight: 800;
+    text-transform: none;
     text-align: center;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -63,7 +63,6 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: ${({ theme }) => theme.fontSizes.medium};
-    text-transform: uppercase;
   }
 
   :disabled {

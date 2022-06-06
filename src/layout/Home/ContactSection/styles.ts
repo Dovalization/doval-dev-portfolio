@@ -29,6 +29,10 @@ export const Heading = styled.h2`
   text-transform: none;
   margin-bottom: 2rem;
 
+  span {
+    color: ${({ theme }) => theme.colors.accent.regular};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     margin-bottom: 1rem;
   }

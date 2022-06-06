@@ -12,9 +12,9 @@ export const TestimonialsSection = ({
 }: TestimonialsSectionProps) => {
   return (
     <S.Wrapper>
-      <h1>
+      <S.Heading>
         Quem é <span>Guilherme Doval?</span>
-      </h1>
+      </S.Heading>
       <EmblaCarousel options={{ loop: true, align: "center", speed: 5 }}>
         {testimonials.map((testimonial, index) => (
           <Testimonial key={index} {...testimonial} />

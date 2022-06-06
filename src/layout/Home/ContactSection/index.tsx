@@ -9,7 +9,9 @@ export const ContactSection = () => {
     <S.Wrapper>
       <S.ContentContainer>
         <S.LeftContainer>
-          <S.Heading>No que posso te ajudar?</S.Heading>
+          <S.Heading>
+            No que <span>posso te ajudar?</span>
+          </S.Heading>
           <div>
             <S.Subheading>
               Ficarei feliz em te ajudar a esclarecer qualquer dúvida que você
