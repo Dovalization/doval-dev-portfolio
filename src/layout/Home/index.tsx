@@ -114,12 +114,25 @@ const mockProjects: Project[] = [
     title: "Dr. João Diogo Martins",
   },
   {
+    banner: "/images/travellider-banner.png",
+    logo: "/images/travellider-logo.png",
+    description:
+      "A Travel Lider nasceu da vontade de oferecer um serviço premium e totalmente personalizado, no que toca ao serviço de transporte privado de luxo de pessoas, turistas, business’s travellers, famílias que elegem Portugal como um destino de férias, lazer ou viagem de negócios.",
+    id: "6",
+    links: {
+      live: "https://www.travellider.com/",
+    },
+    stack: ["WordPress", "JavaScript", "HTML", "CSS"],
+    title: "Travel Lider",
+  },
+
+  {
     banner: "/images/5ej-banner.png",
     logo: "/images/5ej-logo.svg",
     description:
       "A Academia Five Elements Jiu-Jitsu tem por missão o ensino e difusão do Gracie Jiu-Jitsu como um completo sistema de defesa pessoal, como estilo de vida e formação do carácter dos nossos alunos.",
 
-    id: "6",
+    id: "7",
     links: {
       live: "https://fiveelementsjiujitsu.com/",
     },
@@ -131,7 +144,7 @@ const mockProjects: Project[] = [
     logo: "/images/upkd-logo.png",
     description:
       "Associação fundada em 2008, a UPKD – União Portuguesa de Karate-Do nasceu do trabalho conjunto de uma mão-cheia dos alunos mais antigos do Mestre Raul Cerveira, um dos nomes maiores do Karate em Portugal.",
-    id: "7",
+    id: "8",
     links: {
       live: "https://upkd.org/",
     },
@@ -141,7 +154,7 @@ const mockProjects: Project[] = [
   {
     banner: "/images/pmadv-banner.jpg",
     logo: "/images/pmadv-logo.png",
-    id: "7",
+    id: "9",
     links: {
       live: "http://pmadv.com.br/",
     },
