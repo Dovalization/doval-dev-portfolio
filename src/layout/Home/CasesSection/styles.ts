@@ -14,10 +14,8 @@ const fadeIn = keyframes`
 export const Wrapper = styled.section`
   background: ${({ theme }) => theme.colors.blue.dark};
   position: relative;
-  margin-top: -5rem;
-  padding: 10rem 0 5rem;
+  padding: 5rem 0;
 
-  animation: ${fadeIn} 8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   // add a divider to the top of the section
   &::before {
     content: "";
@@ -31,7 +29,7 @@ export const Wrapper = styled.section`
     /* background: url('/img/shapes/fluid-top-white.svg') no-repeat bottom; */
     /* background-size: 100% auto; */
     /* transform: rotate(180deg); */
-    z-index: 2;
+    z-index: 5;
   }
 
   // add a divider to the bottom of the section

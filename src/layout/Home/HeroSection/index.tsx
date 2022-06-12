@@ -1,4 +1,9 @@
+import { Button } from "@/components/Button";
 import { Typer } from "@/components/Typer";
+import heroBgMobile from "@public/images/doval-dev-hero-mobile.jpg";
+import heroBgDesktop from "@public/images/doval-dev-hero.jpg";
+import Image from "next/image";
+import { Mail } from "styled-icons/feather";
 import * as S from "./styles";
 
 // Sections are used to group related components together
@@ -15,37 +20,47 @@ interface HeroSectionProps {
 export const HeroSection = ({ title }: HeroSectionProps) => {
   return (
     <S.Wrapper>
+      <S.HeroBackgroundDesktop>
+        <Image
+          src={heroBgDesktop}
+          layout="fill"
+          objectFit="cover"
+          alt="hero"
+          quality={100}
+          priority
+        />
+      </S.HeroBackgroundDesktop>
+      <S.HeroBackgroundMobile>
+        <Image
+          src={heroBgMobile}
+          layout="fill"
+          objectFit="cover"
+          alt="hero"
+          quality={100}
+          priority
+        />
+      </S.HeroBackgroundMobile>
       <S.ContentContainer>
-        <S.HeroContainer>
-          <S.HeroBackground>
-            <video
-              src="/videos/doval-dev-hero-bg.webm"
-              autoPlay
-              loop
-              muted
-              width="100%"
-            />
-          </S.HeroBackground>
-          <S.HeroContent>
-            <h1>{title}</h1>
-            <Typer
-              typingSpeed={40}
-              deleteSpeed={40}
-              strings={[
-                "Criação de Sites Personalizados 💻",
-                "Desenvolvimento de Landing Pages 📃",
-                "E-Commerce e Lojas Virtuais 🛒",
-                "Aplicativos Mobile e Web 📱",
-                "Dados sobre seu Público Alvo 📊",
-                "Soluções para Marketing Digital 📈",
-                "Consultoria em Tecnologia 💡",
-                "Design UX/UI ✒️",
-              ]}
-              autoStart
-              shouldLoop
-            />
-          </S.HeroContent>
-        </S.HeroContainer>
+        <S.HeroContent>
+          <h1>{title}</h1>
+          <Typer
+            typingSpeed={40}
+            deleteSpeed={40}
+            strings={[
+              "Criação de Sites Personalizados 💻",
+              "Desenvolvimento de Landing Pages 📃",
+              "E-Commerce e Lojas Virtuais 🛒",
+              "Aplicativos Mobile e Web 📱",
+              "Dados sobre seu Público Alvo 📊",
+              "Soluções para Marketing Digital 📈",
+              "Consultoria em Tecnologia 💡",
+              "Design UX/UI ✒️",
+            ]}
+            autoStart
+            shouldLoop
+          />
+          <Button icon={Mail}>Quero Inovar!</Button>
+        </S.HeroContent>
       </S.ContentContainer>
     </S.Wrapper>
   );
