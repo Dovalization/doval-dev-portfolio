@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button";
 import { Typer } from "@/components/Typer";
+import { useScrollTo } from "@/hooks/useScrollTo";
 import heroBgMobile from "@public/images/doval-dev-hero-mobile.jpg";
 import heroBgDesktop from "@public/images/doval-dev-hero.jpg";
 import Image from "next/image";
@@ -18,6 +19,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ title }: HeroSectionProps) => {
+  const clickHandler = useScrollTo("contact-section");
   return (
     <S.Wrapper>
       <S.HeroBackgroundDesktop>
@@ -59,7 +61,9 @@ export const HeroSection = ({ title }: HeroSectionProps) => {
             autoStart
             shouldLoop
           />
-          <Button icon={Mail}>Quero Inovar!</Button>
+          <Button icon={Mail} onClick={clickHandler}>
+            Quero Inovar!
+          </Button>
         </S.HeroContent>
       </S.ContentContainer>
     </S.Wrapper>

@@ -6,7 +6,7 @@ import * as S from "./styles";
 
 export const ContactSection = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="contact-section">
       <S.ContentContainer>
         <S.LeftContainer>
           <S.Heading>

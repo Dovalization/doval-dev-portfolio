@@ -28,15 +28,19 @@ export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: end;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   h1 {
     line-height: 1;
-    text-align: left;
+    text-align: center;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    align-items: start;
     justify-content: center;
+    h1 {
+      text-align: left;
+    }
   }
 `;
 
