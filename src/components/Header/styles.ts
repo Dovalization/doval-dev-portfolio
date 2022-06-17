@@ -1,7 +1,13 @@
 import { Container } from "@/styles/global";
 import styled, { keyframes } from "styled-components";
 
-export const Wrapper = styled.header``;
+export const Wrapper = styled.header`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+`;
 
 const fadeInDown = keyframes`
   from {
