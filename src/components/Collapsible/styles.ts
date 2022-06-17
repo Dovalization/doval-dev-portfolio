@@ -40,7 +40,7 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   top: 50%;
   left: 0;
   right: 0;
-  max-width: 10rem;
+  max-width: 9rem;
   z-index: 2;
   transform: translateY(-50%);
   user-select: none;
@@ -56,7 +56,7 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    max-width: 20rem;
+    max-width: 18rem;
   }
 `;
 
