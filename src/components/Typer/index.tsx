@@ -1,3 +1,4 @@
+import { Variants } from "framer-motion";
 import GraphemeSplitter from "grapheme-splitter";
 import { useCallback } from "react";
 import Typewriter from "typewriter-effect";
@@ -11,6 +12,7 @@ interface TyperProps {
   strings: string[] | string;
   shouldLoop?: true;
   autoStart?: true;
+  variants?: Variants;
 }
 export const Typer = ({
   typingSpeed,
@@ -18,6 +20,8 @@ export const Typer = ({
   strings,
   autoStart,
   shouldLoop,
+  variants,
+  ...rest
 }: TyperProps) => {
   const stringSplitter = useCallback((string: string) => {
     const splitter = new GraphemeSplitter();
@@ -27,7 +31,7 @@ export const Typer = ({
   }, []);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper {...rest} variants={variants}>
       <Typewriter
         options={{
           strings: strings,
