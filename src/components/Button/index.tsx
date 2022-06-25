@@ -1,17 +1,28 @@
 import { StyledIcon } from "@styled-icons/styled-icon";
 import Link from "next/link";
-import { ButtonHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, HTMLAttributes } from "react";
 import * as S from "./styles";
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+// join the two types into a single type, allowing either one to be passed
+interface ButtonProps
+  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   link?: string;
   icon?: StyledIcon;
 }
 
-const ButtonLink = ({ children, link, icon: Icon }: ButtonProps) => {
+interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  link: string;
+  icon?: StyledIcon;
+}
+
+const ButtonLink = ({
+  children,
+  link,
+  icon: Icon,
+  ...rest
+}: ButtonLinkProps) => {
   return (
     <Link href={link!} passHref>
-      <S.Wrapper as={"a"} target="_blank">
+      <S.Wrapper as={"a"} target="_blank" {...rest}>
         <S.ButtonContents>
           {Icon && (
             <S.IconContainer>
@@ -27,7 +38,7 @@ const ButtonLink = ({ children, link, icon: Icon }: ButtonProps) => {
 
 const PlainButton = ({ children, icon: Icon, ...rest }: ButtonProps) => {
   return (
-    <S.Wrapper {...rest}>
+    <S.Wrapper as={"button"} {...rest}>
       <S.ButtonContents>
         {Icon && (
           <S.IconContainer>
@@ -40,14 +51,14 @@ const PlainButton = ({ children, icon: Icon, ...rest }: ButtonProps) => {
   );
 };
 
-export const Button = ({ children, link, ...props }: ButtonProps) => {
+export const Button = ({ children, link, ...rest }: ButtonProps) => {
   if (link) {
     return (
-      <ButtonLink link={link} {...props}>
+      <ButtonLink link={link} {...rest}>
         {children}
       </ButtonLink>
     );
   }
 
-  return <PlainButton {...props}>{children}</PlainButton>;
+  return <PlainButton {...rest}>{children}</PlainButton>;
 };

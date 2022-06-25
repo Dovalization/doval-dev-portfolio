@@ -1,7 +1,8 @@
 import { StyledIconBase } from "@styled-icons/styled-icon";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Wrapper = styled.button`
+export const Wrapper = styled(motion.button)`
   /* Positioning */
 
   /* Display & Box Model */
