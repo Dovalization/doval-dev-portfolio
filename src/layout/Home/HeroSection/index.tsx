@@ -2,7 +2,7 @@ import { Button } from "@/components/Button";
 import { Typer } from "@/components/Typer";
 import { useScrollTo } from "@/hooks/useScrollTo";
 import heroBgMobile from "@public/images/doval-dev-hero-mobile.jpg";
-import heroBgDesktop from "@public/images/doval-dev-hero.jpg";
+import heroBgDesktop from "@public/images/doval-dev-hero.png";
 import Image from "next/image";
 import { Mail } from "styled-icons/feather";
 import * as S from "./styles";
@@ -29,6 +29,7 @@ export const HeroSection = ({ title }: HeroSectionProps) => {
           objectFit="cover"
           alt="hero"
           quality={100}
+          placeholder="blur"
           priority
         />
       </S.HeroBackgroundDesktop>
@@ -39,6 +40,7 @@ export const HeroSection = ({ title }: HeroSectionProps) => {
           objectFit="cover"
           alt="hero"
           quality={100}
+          placeholder="blur"
           priority
         />
       </S.HeroBackgroundMobile>

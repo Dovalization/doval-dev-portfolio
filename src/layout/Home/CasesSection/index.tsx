@@ -18,6 +18,7 @@ export const CasesSection = ({ projects }: CasesSectionProps) => {
           layout="fill"
           objectFit="contain"
           quality={100}
+          placeholder="blur"
         />
       </S.BackgroundWrapper>
       <S.ProjectsContainer>
