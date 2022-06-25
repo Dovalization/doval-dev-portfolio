@@ -3,8 +3,10 @@ import { Typer } from "@/components/Typer";
 import { useScrollTo } from "@/hooks/useScrollTo";
 import heroBgMobile from "@public/images/doval-dev-hero-mobile.jpg";
 import heroBgDesktop from "@public/images/doval-dev-hero.png";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Mail } from "styled-icons/feather";
+import * as A from "./animations";
 import * as S from "./styles";
 
 // Sections are used to group related components together
@@ -44,30 +46,39 @@ export const HeroSection = ({ title }: HeroSectionProps) => {
           priority
         />
       </S.HeroBackgroundMobile>
-      <S.ContentContainer>
-        <S.HeroContent>
-          <h1>{title}</h1>
-          <Typer
-            typingSpeed={40}
-            deleteSpeed={40}
-            strings={[
-              "Criação de Sites Personalizados 💻",
-              "Desenvolvimento de Landing Pages 📃",
-              "E-Commerce e Lojas Virtuais 🛒",
-              "Aplicativos Mobile e Web 📱",
-              "Dados sobre seu Público Alvo 📊",
-              "Soluções para Marketing Digital 📈",
-              "Consultoria em Tecnologia 💡",
-              "Design UX/UI ✒️",
-            ]}
-            autoStart
-            shouldLoop
-          />
-          <Button icon={Mail} onClick={clickHandler}>
-            Quero Inovar!
-          </Button>
-        </S.HeroContent>
-      </S.ContentContainer>
+      <AnimatePresence>
+        <S.ContentContainer>
+          <S.HeroContent
+            variants={A.HeroContentVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <S.Title variants={A.SlideInRight}>{title}</S.Title>
+            <Typer
+              typingSpeed={40}
+              deleteSpeed={40}
+              strings={[
+                "Criação de Sites Personalizados 💻",
+                "Desenvolvimento de Landing Pages 📃",
+                "E-Commerce e Lojas Virtuais 🛒",
+                "Aplicativos Mobile e Web 📱",
+                "Dados sobre seu Público Alvo 📊",
+                "Soluções para Marketing Digital 📈",
+                "Consultoria em Tecnologia 💡",
+                "Design UX/UI ✒️",
+              ]}
+              autoStart
+              shouldLoop
+              variants={A.SlideInRight}
+            />
+            <S.ButtonContainer variants={A.SlideInRight}>
+              <Button icon={Mail} onClick={clickHandler}>
+                Quero Inovar!
+              </Button>
+            </S.ButtonContainer>
+          </S.HeroContent>
+        </S.ContentContainer>
+      </AnimatePresence>
     </S.Wrapper>
   );
 };

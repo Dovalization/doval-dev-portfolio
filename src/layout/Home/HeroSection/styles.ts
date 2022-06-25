@@ -1,4 +1,5 @@
 import { Container } from "@styles/global";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
@@ -22,7 +23,7 @@ export const ContentContainer = styled(Container)`
     grid-template-columns: 1fr 1fr;
   }
 `;
-export const HeroContent = styled.div`
+export const HeroContent = styled(motion.div)`
   z-index: 5;
   width: 100%;
   display: flex;
@@ -30,18 +31,24 @@ export const HeroContent = styled.div`
   justify-content: end;
   align-items: center;
   gap: 1rem;
-  h1 {
-    line-height: 1;
-    text-align: center;
-  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     align-items: start;
     justify-content: center;
-    h1 {
-      text-align: left;
-    }
   }
+`;
+
+export const Title = styled(motion.h1)`
+  line-height: 1;
+  text-align: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    text-align: left;
+  }
+`;
+
+export const ButtonContainer = styled(motion.div)`
+  width: 100%;
 `;
 
 export const HeroBackgroundDesktop = styled.div`
