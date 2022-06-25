@@ -1,7 +1,8 @@
 import { Container } from "@/styles/global";
-import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
-export const Wrapper = styled.header`
+export const Wrapper = styled(motion.header)`
   position: absolute;
   top: 0;
   left: 0;
@@ -9,26 +10,11 @@ export const Wrapper = styled.header`
   z-index: 10;
 `;
 
-const fadeInDown = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-    transform: scale(0.8);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    transform: scale(1);
-  }
-`;
-
 export const ContentContainer = styled(Container)`
   padding: 2.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: ${fadeInDown} 1s ease-out;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     justify-content: space-between;

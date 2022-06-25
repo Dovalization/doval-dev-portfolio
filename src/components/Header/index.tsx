@@ -1,11 +1,12 @@
 import { SocialIcon } from "@components/SocialIcon";
 import fullLogo from "@public/images/doval-dev-logo-white-full.svg";
 import Image from "next/image";
+import * as A from "./animations";
 import * as S from "./styles";
 
 export const Header = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper {...A.HeaderVariants}>
       <S.ContentContainer>
         <S.LogoWrapper>
           <Image
