@@ -1,3 +1,4 @@
+import { ErrorMessage } from "@hookform/error-message";
 import { AnimatePresence } from "framer-motion";
 import { InputHTMLAttributes, useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -7,7 +8,7 @@ import * as S from "./styles";
 
 interface InputProps
   extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
-  name: string;
+  name: "name" | "email" | "message";
   type?: "textarea" | "text" | "email" | "password";
 }
 
@@ -30,10 +31,16 @@ export const Input = ({ name, ...props }: InputProps) => {
     setIsFilled(!!watch(name));
   }, [name, watch]);
 
+  const labelText = {
+    name: "Nome",
+    email: "E-mail",
+    message: "Sua mensagem",
+  };
+
   return (
     <AnimatePresence>
       <S.Container>
-        <S.Label htmlFor={name}>{name}</S.Label>
+        <S.Label htmlFor={name}>{labelText[name]}</S.Label>
         <S.Wrapper
           $isErrored={!!errors[name]}
           $isFilled={isFilled}
@@ -58,7 +65,7 @@ export const Input = ({ name, ...props }: InputProps) => {
         {errors[name] && (
           <S.ErrorContainer {...A.ErrorVariant}>
             <AlertCircle />
-            <S.Error>{errors[name]?.message}</S.Error>
+            <ErrorMessage errors={errors} name={name} />
           </S.ErrorContainer>
         )}
       </S.Container>
