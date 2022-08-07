@@ -1,28 +1,30 @@
 import { StyledIcon } from "@styled-icons/styled-icon";
+import { HTMLMotionProps } from "framer-motion";
+
 import Link from "next/link";
-import { AnchorHTMLAttributes, HTMLAttributes } from "react";
 import * as S from "./styles";
-// join the two types into a single type, allowing either one to be passed
-interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+
+type TIcon = "rightArrow" | "leftArrow" | "downArrow" | "upArrow";
+
+interface ButtonProps extends HTMLMotionProps<"button"> {
   link?: string;
   icon?: StyledIcon;
 }
 
-interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface ButtonLinkProps extends ButtonProps {
   link: string;
-  icon?: StyledIcon;
 }
 
 const ButtonLink = ({
   children,
   link,
   icon: Icon,
-  ...rest
+  variants,
+  onClick,
 }: ButtonLinkProps) => {
   return (
-    <Link href={link!} passHref>
-      <S.Wrapper as={"a"} target="_blank" {...rest}>
+    <Link href={link} passHref>
+      <S.Wrapper variants={variants} onClick={onClick}>
         <S.ButtonContents>
           {Icon && (
             <S.IconContainer>
@@ -36,9 +38,14 @@ const ButtonLink = ({
   );
 };
 
-const PlainButton = ({ children, icon: Icon, ...rest }: ButtonProps) => {
+const PlainButton = ({
+  children,
+  icon: Icon,
+  variants,
+  onClick,
+}: ButtonProps) => {
   return (
-    <S.Wrapper as={"button"} {...rest}>
+    <S.Wrapper variants={variants} onClick={onClick}>
       <S.ButtonContents>
         {Icon && (
           <S.IconContainer>
@@ -51,14 +58,18 @@ const PlainButton = ({ children, icon: Icon, ...rest }: ButtonProps) => {
   );
 };
 
-export const Button = ({ children, link, ...rest }: ButtonProps) => {
+export const Button = ({ children, link, onClick, ...props }: ButtonProps) => {
   if (link) {
     return (
-      <ButtonLink link={link} {...rest}>
+      <ButtonLink link={link} {...props} onClick={onClick}>
         {children}
       </ButtonLink>
     );
   }
 
-  return <PlainButton {...rest}>{children}</PlainButton>;
+  return (
+    <PlainButton {...props} onClick={onClick}>
+      {children}
+    </PlainButton>
+  );
 };
