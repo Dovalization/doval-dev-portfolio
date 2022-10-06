@@ -2,16 +2,22 @@ import { StyledIcon } from "@styled-icons/styled-icon";
 import { HTMLMotionProps } from "framer-motion";
 
 import Link from "next/link";
+import { MouseEventHandler } from "react";
 import * as S from "./styles";
 
 type TIcon = "rightArrow" | "leftArrow" | "downArrow" | "upArrow";
 
-interface ButtonProps extends HTMLMotionProps<"button"> {
+interface ButtonProps extends HTMLMotionProps<"button" | "a"> {
   link?: string;
   icon?: StyledIcon;
 }
 
-interface ButtonLinkProps extends ButtonProps {
+interface PlayButtonProps extends HTMLMotionProps<"button"> {
+  icon?: StyledIcon;
+}
+
+interface LinkButtonProps extends HTMLMotionProps<"a"> {
+  icon?: StyledIcon;
   link: string;
 }
 
@@ -21,10 +27,14 @@ const ButtonLink = ({
   icon: Icon,
   variants,
   onClick,
-}: ButtonLinkProps) => {
+}: LinkButtonProps) => {
   return (
     <Link href={link} passHref>
-      <S.Wrapper variants={variants} onClick={onClick}>
+      <S.LinkButtonWrapper
+        variants={variants}
+        onClick={onClick}
+        target="_blank"
+      >
         <S.ButtonContents>
           {Icon && (
             <S.IconContainer>
@@ -33,7 +43,7 @@ const ButtonLink = ({
           )}
           <S.Label>{children}</S.Label>
         </S.ButtonContents>
-      </S.Wrapper>
+      </S.LinkButtonWrapper>
     </Link>
   );
 };
@@ -43,7 +53,7 @@ const PlainButton = ({
   icon: Icon,
   variants,
   onClick,
-}: ButtonProps) => {
+}: PlayButtonProps) => {
   return (
     <S.Wrapper variants={variants} onClick={onClick}>
       <S.ButtonContents>
@@ -61,14 +71,18 @@ const PlainButton = ({
 export const Button = ({ children, link, onClick, ...props }: ButtonProps) => {
   if (link) {
     return (
-      <ButtonLink link={link} {...props} onClick={onClick}>
+      <ButtonLink
+        link={link}
+        onClick={onClick as MouseEventHandler<HTMLAnchorElement>}
+        icon={props.icon}
+      >
         {children}
       </ButtonLink>
     );
   }
 
   return (
-    <PlainButton {...props} onClick={onClick}>
+    <PlainButton onClick={onClick as MouseEventHandler<HTMLButtonElement>}>
       {children}
     </PlainButton>
   );
