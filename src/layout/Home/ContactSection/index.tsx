@@ -15,10 +15,13 @@ export const ContactSection = () => {
           <div>
             <S.Subheading>
               Ficarei feliz em te ajudar a esclarecer qualquer dúvida que você
-              tenha sobre meus serviços.
+              tenha sobre meus serviços e espero poder trabalhar com você em
+              breve!
             </S.Subheading>
             <S.Subheading>
-              Orçamentos sem compromisso, entre em contato comigo.
+              Todos projetos são feitos sob medida, então não hesite em me
+              contactar para solicitar um orçamento ou para conversar sobre suas
+              ideias e objetivos.
             </S.Subheading>
           </div>
           <S.ContactsContainer>
