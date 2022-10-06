@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
   return {
     props: {
-      title: "Inove seu Negócio",
+      title: "Inovação na presença digital de sua empresa",
     },
   };
 };

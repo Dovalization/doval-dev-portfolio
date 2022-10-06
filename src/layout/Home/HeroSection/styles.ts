@@ -15,11 +15,15 @@ export const ContentContainer = styled(Container)`
   padding-bottom: 16rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     padding-bottom: 10rem;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.highRes}) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.ultraHighRes}) {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -39,8 +43,9 @@ export const HeroContent = styled(motion.div)`
 `;
 
 export const Title = styled(motion.h1)`
-  line-height: 1;
+  line-height: 1.25;
   text-align: center;
+  max-width: 19ch;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     text-align: left;
