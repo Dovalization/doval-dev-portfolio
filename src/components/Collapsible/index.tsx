@@ -1,14 +1,30 @@
 import { Button } from "@/components/Button";
-import { Project } from "@/types/common";
+import { Tech } from "@/types/common";
+
+import { IProjectFields } from "@/types/contentful.pages";
 import { TechIcon } from "@components/TechIcon";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
+import { Entry } from "contentful";
 import Image from "next/image";
 import { useCallback, useState } from "react";
-import { Code, Globe } from "styled-icons/feather/";
+import { Globe } from "styled-icons/feather/";
 import * as S from "./styles";
 
 interface CollapsibleProps {
-  project: Project;
+  project: Entry<IProjectFields>;
 }
+
+const RICHTEXT_OPTIONS: Options = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <S.Description>{children}</S.Description>;
+    },
+  },
+};
 
 export const Collapsible = ({ project }: CollapsibleProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +42,7 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
     <S.Wrapper $isOpen={isOpen}>
       <S.Banner onClick={handleClick} $isOpen={isOpen}>
         <Image
-          src={project.banner}
+          src={`https:${project.fields.banner.fields.file.url}`}
           alt="Banner"
           width={"2148px"}
           height={"650px"}
@@ -35,7 +51,7 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
         />
         <S.LogoWrapper $isOpen={isOpen}>
           <Image
-            src={project.logo}
+            src={`https:${project.fields.logo.fields.file.url}`}
             alt="Logo"
             layout="responsive"
             objectFit="contain"
@@ -45,24 +61,20 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
         </S.LogoWrapper>
       </S.Banner>
       <S.Content $isOpen={isOpen}>
-        <S.Title>{project.title}</S.Title>
-        <S.Description
-          dangerouslySetInnerHTML={{ __html: project.description }}
-        />
+        <S.Title>{project.fields.title}</S.Title>
+        {documentToReactComponents(
+          project.fields.description,
+          RICHTEXT_OPTIONS
+        )}
         <S.Icons>
-          {project.stack.map((item, index) => (
-            <TechIcon key={index} type={item} />
+          {project.fields.stack.map((tech, index) => (
+            <TechIcon key={index} type={tech as Tech} />
           ))}
         </S.Icons>
         <S.ButtonsContainer>
-          {project.links.live && (
-            <Button link={project.links.live} icon={Globe}>
+          {project.fields.liveUrl && (
+            <Button link={project.fields.liveUrl} icon={Globe}>
               Acessar
-            </Button>
-          )}
-          {project.links.code && (
-            <Button link={project.links.code} icon={Code}>
-              Github
             </Button>
           )}
         </S.ButtonsContainer>

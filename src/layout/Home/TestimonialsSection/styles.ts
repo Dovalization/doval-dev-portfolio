@@ -18,7 +18,7 @@ export const Heading = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.large};
   text-transform: none;
 
-  span {
+  p b {
     color: ${({ theme }) => theme.colors.accent.regular};
   }
 `;

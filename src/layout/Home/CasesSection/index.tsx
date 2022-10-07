@@ -1,11 +1,12 @@
 import { Collapsible } from "@/components/Collapsible";
-import { Project } from "@/types/common";
+import { IProjectFields } from "@/types/contentful.pages";
 import bgImage from "@public/images/doval-dev-cases-background.png";
+import { Entry } from "contentful";
 import Image from "next/image";
 import * as S from "./styles";
 
 interface CasesSectionProps {
-  projects: Project[];
+  projects: Entry<IProjectFields>[];
 }
 
 export const CasesSection = ({ projects }: CasesSectionProps) => {

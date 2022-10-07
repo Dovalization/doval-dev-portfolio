@@ -17,9 +17,10 @@ import * as S from "./styles";
 
 interface HeroSectionProps {
   title: string;
+  taglines: string[];
 }
 
-export const HeroSection = ({ title }: HeroSectionProps) => {
+export const HeroSection = ({ title, taglines }: HeroSectionProps) => {
   const clickHandler = useScrollTo("contact-section");
   return (
     <S.Wrapper>
@@ -55,16 +56,7 @@ export const HeroSection = ({ title }: HeroSectionProps) => {
           <Typer
             typingSpeed={40}
             deleteSpeed={40}
-            strings={[
-              "Criação de Sites Personalizados 💻",
-              "Desenvolvimento de Landing Pages 📃",
-              "E-Commerce e Lojas Virtuais 🛒",
-              "Aplicativos Mobile e Web 📱",
-              "Dados sobre seu Público Alvo 📊",
-              "Soluções para Marketing Digital 📈",
-              "Consultoria em Tecnologia 💡",
-              "Design UX/UI ✒️",
-            ]}
+            strings={taglines}
             autoStart
             shouldLoop
             variants={A.SlideInRight}

@@ -29,7 +29,7 @@ export const Heading = styled.h2`
   text-transform: none;
   margin-bottom: 2rem;
 
-  span {
+  p b {
     color: ${({ theme }) => theme.colors.accent.regular};
   }
 
@@ -38,15 +38,15 @@ export const Heading = styled.h2`
   }
 `;
 
-export const Subheading = styled.h3`
+export const TextContainer = styled.div`
   color: ${({ theme }) => theme.colors.blue.light};
   font-size: 1.25rem;
   font-weight: normal;
   max-width: 40rem;
   line-height: 1.5;
 
-  & + & {
-    margin-top: 1rem;
+  p + p {
+    margin-top: 1.5rem;
   }
 `;
 

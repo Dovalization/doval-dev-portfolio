@@ -43,18 +43,23 @@ export const CopyContainer = styled.div`
   }
 `;
 
+export const CopyTextWrapper = styled.div`
+  line-height: 2;
+
+  p + p {
+    margin-top: 2rem;
+  }
+
+  b {
+    font-weight: 600;
+  }
+`;
+
 export const ButtonContainer = styled.div`
   max-width: 100%;
   width: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     max-width: 45rem;
-  }
-`;
-export const Copy = styled.p`
-  line-height: 2;
-
-  strong {
-    font-weight: 600;
   }
 `;

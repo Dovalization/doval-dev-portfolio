@@ -14,10 +14,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.13.2",
     "@hookform/error-message": "^2.0.0",
     "@hookform/resolvers": "^2.9.8",
     "@sendgrid/mail": "^7.7.0",
     "axios": "^1.0.0",
+    "contentful": "^9.2.5",
     "embla-carousel-autoplay": "^7.0.3",
     "embla-carousel-react": "^7.0.3",
     "framer-motion": "^7.5.2",

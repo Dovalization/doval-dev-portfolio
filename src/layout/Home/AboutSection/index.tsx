@@ -1,40 +1,46 @@
 import { Button } from "@/components/Button";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+import { BLOCKS, Document, MARKS } from "@contentful/rich-text-types";
+import { Asset } from "contentful";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Download } from "styled-icons/feather/";
 import * as S from "./styles";
 
-export const AboutSection = () => {
+const RICHTEXT_OPTIONS: Options = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <p>{children}</p>;
+    },
+    [MARKS.BOLD]: (node, children) => {
+      return <b>{children}</b>;
+    },
+  },
+};
+
+interface IAboutSectionProps {
+  aboutText: Document;
+  cvFile: Asset;
+}
+
+export const AboutSection = ({ aboutText, cvFile }: IAboutSectionProps) => {
+  const [aboutSectionText, setAboutSectionText] = useState(aboutText);
+
+  useEffect(() => {
+    setAboutSectionText(aboutText);
+  }, [aboutText]);
   return (
     <S.Wrapper>
       <S.ContentContainer>
         <S.CopyContainer>
-          <S.Copy>
-            Guilherme Doval tem 27 anos e{" "}
-            <strong>
-              é Mestre em Design e Cultura Visual e Tecnólogo em Jogos Digitais.
-            </strong>{" "}
-            Ele é um profissional <strong>altamente versátil,</strong> com foco
-            em <strong>acessibilidade,</strong> ética e utilizando de uma{" "}
-            <strong>perspectiva humanista e abrangente.</strong> Por sua própria
-            definição: um <strong>solucionador de problemas criativo.</strong>
-            <br />
-            <br />
-            Guilherme trabalha com <strong>Programação Web,</strong>
-            especializado em <strong>Front-End,</strong> e com as tecnologias
-            mais recentes do mercado. Aliado a habilidades de{" "}
-            <strong>UX/UI Design,</strong> ele é capaz de conduzir um projeto
-            digital desde sua concepção até sua implementação em código,
-            resultando em{" "}
-            <strong>
-              {" "}
-              sites responsivos, rápidos e que trazem resultados.
-            </strong>
-          </S.Copy>
+          <S.CopyTextWrapper>
+            {documentToReactComponents(aboutSectionText, RICHTEXT_OPTIONS)}
+          </S.CopyTextWrapper>
           <S.ButtonContainer>
-            <Button
-              link="/documents/guilherme-doval-cv-2022.pdf"
-              icon={Download}
-            >
+            <Button link={`https:${cvFile.fields.file.url}`} icon={Download}>
               Download CV
             </Button>
           </S.ButtonContainer>

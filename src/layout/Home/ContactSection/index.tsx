@@ -1,41 +1,76 @@
 import { Button } from "@/components/Button";
-import { ContactForm } from "@/components/ContactForm";
-import { SocialIcon } from "@/components/SocialIcon";
-import { Mail, MapPin, Phone } from "styled-icons/feather/";
+import { BLOCKS, Document, MARKS } from "@contentful/rich-text-types";
+import { MapPin, Phone } from "styled-icons/feather/";
 import * as S from "./styles";
 
-export const ContactSection = () => {
+import { ContactForm } from "@/components/ContactForm";
+import { SocialIcon } from "@/components/SocialIcon";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+import { useMemo } from "react";
+import { Mail } from "styled-icons/entypo";
+
+const RICHTEXT_OPTIONS: Options = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <p>{children}</p>;
+    },
+    [MARKS.BOLD]: (node, children) => {
+      return <span>{children}</span>;
+    },
+  },
+};
+export interface IContactSectionProps {
+  title: Document;
+  text: Document;
+  phoneNumber: string;
+  contactEmail: string;
+  locationName: string;
+  locationWikiLink: string;
+}
+
+// function will format phone number coming as: "+5511999999999"
+// to: "(11) 99999-9999"
+
+const formatPhoneNumber = (phoneNumber: string) => {
+  return `(${phoneNumber.replace(/\D/g, "").slice(2, 4)}) ${phoneNumber
+    .replace(/\D/g, "")
+    .slice(4, 9)}-${phoneNumber.replace(/\D/g, "").slice(9, 13)}`;
+};
+
+export const ContactSection = ({
+  contactEmail,
+  locationName,
+  locationWikiLink,
+  phoneNumber,
+  text,
+  title,
+}: IContactSectionProps) => {
+  const formattedPhoneNumber = useMemo(() => {
+    return formatPhoneNumber(phoneNumber);
+  }, [phoneNumber]);
+
   return (
     <S.Wrapper id="contact-section">
       <S.ContentContainer>
         <S.LeftContainer>
           <S.Heading>
-            No que <span>posso te ajudar?</span>
+            {documentToReactComponents(title, RICHTEXT_OPTIONS)}
           </S.Heading>
-          <div>
-            <S.Subheading>
-              Ficarei feliz em te ajudar a esclarecer qualquer dúvida que você
-              tenha sobre meus serviços e espero poder trabalhar com você em
-              breve!
-            </S.Subheading>
-            <S.Subheading>
-              Todos projetos são feitos sob medida, então não hesite em me
-              contactar para solicitar um orçamento ou para conversar sobre suas
-              ideias e objetivos.
-            </S.Subheading>
-          </div>
+          <S.TextContainer>
+            {documentToReactComponents(text, RICHTEXT_OPTIONS)}
+          </S.TextContainer>
           <S.ContactsContainer>
-            <Button link="tel:+5551995808044" icon={Phone}>
-              +55 (51) 9 9580-8044
+            <Button link={`tel:${phoneNumber}`} icon={Phone}>
+              {formattedPhoneNumber}
             </Button>
-            <Button link="mailto:me@doval.dev" icon={Mail}>
-              me@doval.dev
+            <Button link={`mailto:${contactEmail}`} icon={Mail}>
+              {contactEmail}
             </Button>
-            <Button
-              link="https://pt.wikipedia.org/wiki/Porto_Alegre"
-              icon={MapPin}
-            >
-              Porto Alegre, Brasil
+            <Button link={locationWikiLink} icon={MapPin}>
+              {locationName}
             </Button>
           </S.ContactsContainer>
           <S.SocialLinksContainer>

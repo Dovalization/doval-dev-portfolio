@@ -1,14 +1,14 @@
-import type { Testimonial as TestimonialT } from "@/types/common";
+import type { ITestimonialFields } from "@/types/contentful.pages";
 import Image from "next/image";
 import * as S from "./styles";
 
 export const Testimonial = ({
   authorName,
   authorTitle,
-  avatar,
-  id,
-  text,
-}: TestimonialT) => {
+  authorAvatar,
+  testimonialText,
+}: ITestimonialFields) => {
+  console.log({ authorAvatar, testimonialText, authorName, authorTitle });
   return (
     <S.Wrapper>
       <S.ContentContainer>
@@ -21,12 +21,12 @@ export const Testimonial = ({
             height="100%"
           />
         </S.QuoteWrapper>
-        <S.Text>{text}</S.Text>
+        <S.Text>{testimonialText}</S.Text>
       </S.ContentContainer>
       <S.AuthorContainer>
         <S.AvatarWrapper>
           <Image
-            src={avatar}
+            src={`https:${authorAvatar.fields.file.url}`}
             layout="responsive"
             objectFit="cover"
             width={100}
