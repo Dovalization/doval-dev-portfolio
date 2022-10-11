@@ -23,6 +23,7 @@ export const Wrapper = styled.article<CollapsibleStyleProps>`
   &:hover {
     outline: ${({ theme, $isOpen }) =>
       !$isOpen && `4px solid ${theme.colors.accent.regular};`};
+    cursor: ${({ $isOpen }) => !$isOpen && "pointer;"};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
