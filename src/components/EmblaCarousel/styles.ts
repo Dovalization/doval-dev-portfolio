@@ -15,6 +15,13 @@ export const Slide = styled.div`
   position: relative;
   min-width: 100%;
   padding: 0.25rem 7.5%;
+  &:hover {
+    cursor: grab;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 0.25rem 10%;
