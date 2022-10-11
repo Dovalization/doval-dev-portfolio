@@ -57,7 +57,7 @@ export const HeroSection = ({
           animate="animate"
         >
           <S.Title variants={A.SlideInRight}>{title}</S.Title>
-          <S.Subtitle>{subtitle}</S.Subtitle>
+          <S.Subtitle variants={A.SlideInRight}>{subtitle}</S.Subtitle>
           {/* <Typer
             typingSpeed={40}
             deleteSpeed={40}
