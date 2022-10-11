@@ -9,9 +9,8 @@ export const Wrapper = styled(motion.div)`
   .typer-wrapper,
   .typer-cursor {
     margin: 0;
-    font-weight: bold;
     font-size: ${({ theme }) => theme.fontSizes.small};
-
+    font-weight: 600;
     /* text-transform: uppercase; */
     line-height: 1.5;
 
@@ -21,7 +20,7 @@ export const Wrapper = styled(motion.div)`
   }
 
   .typer-cursor {
-    font-weight: 900;
+    font-weight: bold;
     color: ${({ theme }) => theme.colors.accent.regular};
   }
 `;

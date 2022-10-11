@@ -10,11 +10,12 @@ export const Wrapper = styled.section`
 export const ContentContainer = styled(Container)`
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 100vh;
+  min-height: 110vh;
   padding-top: 8rem;
   padding-bottom: 16rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    min-height: 100vh;
     grid-template-columns: 2.5fr 1fr;
     padding-bottom: 10rem;
   }
@@ -46,9 +47,30 @@ export const Title = styled(motion.h1)`
   line-height: 1.25;
   text-align: center;
   max-width: 19ch;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     text-align: left;
+    font-size: ${({ theme }) => theme.fontSizes.large};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.highRes}) {
+    font-size: ${({ theme }) => theme.fontSizes.extraLarge};
+  }
+`;
+
+export const Subtitle = styled(motion.h1)`
+  text-align: center;
+  font-weight: 600;
+  max-width: 30ch;
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    text-align: left;
+    font-size: ${({ theme }) => theme.fontSizes.medium};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.highRes}) {
+    font-size: ${({ theme }) => theme.fontSizes.big};
   }
 `;
 

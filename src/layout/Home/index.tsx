@@ -26,6 +26,7 @@ export const HomeLayout = ({ homepage }: HomeLayoutProps) => {
   return (
     <S.Wrapper>
       <HeroSection
+        subtitle={homepage.heroSubtitle}
         title={homepage.heroTitle}
         taglines={homepage.heroTaglines}
       />

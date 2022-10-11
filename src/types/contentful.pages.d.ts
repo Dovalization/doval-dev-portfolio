@@ -20,6 +20,7 @@ export interface ITestimonialFields {
 export interface IHomepageFields {
   pageName: string;
   heroTitle: string;
+  heroSubtitle: string;
   heroTaglines: string[];
   projects: Entry<IProjectFields>[];
   testimonialsSectionTitle: Document;

@@ -1,5 +1,4 @@
 import { Button } from "@/components/Button";
-import { Typer } from "@/components/Typer";
 import { useScrollTo } from "@/hooks/useScrollTo";
 import heroBgMobile from "@public/images/doval-dev-hero-mobile.jpg";
 import heroBgDesktop from "@public/images/doval-dev-hero.png";
@@ -17,10 +16,15 @@ import * as S from "./styles";
 
 interface HeroSectionProps {
   title: string;
+  subtitle: string;
   taglines: string[];
 }
 
-export const HeroSection = ({ title, taglines }: HeroSectionProps) => {
+export const HeroSection = ({
+  title,
+  subtitle,
+  taglines,
+}: HeroSectionProps) => {
   const clickHandler = useScrollTo("contact-section");
   return (
     <S.Wrapper>
@@ -53,14 +57,15 @@ export const HeroSection = ({ title, taglines }: HeroSectionProps) => {
           animate="animate"
         >
           <S.Title variants={A.SlideInRight}>{title}</S.Title>
-          <Typer
+          <S.Subtitle>{subtitle}</S.Subtitle>
+          {/* <Typer
             typingSpeed={40}
             deleteSpeed={40}
             strings={taglines}
             autoStart
             shouldLoop
             variants={A.SlideInRight}
-          />
+          /> */}
           <S.ButtonContainer variants={A.SlideInRight}>
             <Button icon={Mail} onClick={clickHandler}>
               Quero Inovar!
