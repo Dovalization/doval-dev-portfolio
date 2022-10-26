@@ -10,6 +10,15 @@ export interface IProjectFields {
   liveUrl: string;
 }
 
+export interface IBlogPost {
+  title: string;
+  slug: string;
+  excerpt: string;
+  date: string;
+  coverImage: Asset;
+  content: Document;
+}
+
 export interface ITestimonialFields {
   authorName: string;
   authorTitle: string;
