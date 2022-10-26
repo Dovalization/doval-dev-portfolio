@@ -15,11 +15,9 @@ const icon = {
 
 export const SocialIcon = ({ type, url }: SocialIconProps) => {
   return (
-    <Link href={url} passHref>
-      <S.Wrapper target="_blank">
-        {icon[type]}
-        <S.VisuallyHidden>{type}</S.VisuallyHidden>
-      </S.Wrapper>
+    <Link href={url} passHref target={"_blank"}>
+      <S.Wrapper>{icon[type]}</S.Wrapper>
+      <S.VisuallyHidden>{type}</S.VisuallyHidden>
     </Link>
   );
 };

@@ -29,12 +29,8 @@ const ButtonLink = ({
   onClick,
 }: LinkButtonProps) => {
   return (
-    <Link href={link} passHref>
-      <S.LinkButtonWrapper
-        variants={variants}
-        onClick={onClick}
-        target="_blank"
-      >
+    <Link href={link} passHref target={"_blank"}>
+      <S.LinkButtonWrapper variants={variants} onClick={onClick}>
         <S.ButtonContents>
           {Icon && (
             <S.IconContainer>

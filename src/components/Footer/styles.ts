@@ -17,6 +17,7 @@ export const ContentContainer = styled(Container)`
 export const LogoWrapper = styled.div`
   position: relative;
   max-width: 15rem;
+  max-height: 5rem;
   width: 100%;
   height: 100%;
 `;

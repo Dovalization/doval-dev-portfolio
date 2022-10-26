@@ -44,20 +44,20 @@ export const Collapsible = ({ project }: CollapsibleProps) => {
         <Image
           src={`https:${project.fields.banner.fields.file.url}`}
           alt="Banner"
-          width={"2148px"}
-          height={"650px"}
-          layout="responsive"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <S.LogoWrapper $isOpen={isOpen}>
-          <Image
-            src={`https:${project.fields.logo.fields.file.url}`}
-            alt="Logo"
-            layout="responsive"
-            objectFit="contain"
-            width={"100%"}
-            height={"100%"}
-          />
+          <S.LogoImage>
+            <Image
+              src={`https:${project.fields.logo.fields.file.url}`}
+              alt="Logo"
+              fill
+              style={{ objectFit: "contain" }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </S.LogoImage>
         </S.LogoWrapper>
       </S.Banner>
       <S.Content $isOpen={isOpen}>

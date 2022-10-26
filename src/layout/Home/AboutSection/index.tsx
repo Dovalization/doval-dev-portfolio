@@ -49,11 +49,9 @@ export const AboutSection = ({ aboutText, cvFile }: IAboutSectionProps) => {
           <Image
             src="/images/doval-dev-profile.jpg"
             alt="Doval"
-            layout="responsive"
-            objectFit="contain"
-            width={1000}
-            height={1000}
+            fill
             quality={100}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </S.ImageWrapper>
       </S.ContentContainer>

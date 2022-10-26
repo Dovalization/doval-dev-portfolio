@@ -21,6 +21,7 @@ export const ContentContainer = styled(Container)`
 `;
 
 export const ImageWrapper = styled.div`
+  position: relative;
   aspect-ratio: 1;
   border-radius: 1rem;
   place-self: end;

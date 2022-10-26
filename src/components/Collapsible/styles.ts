@@ -41,7 +41,9 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   top: 50%;
   left: 0;
   right: 0;
-  max-width: 9rem;
+  width: 100%;
+  height: 100%;
+  max-width: 10rem;
   z-index: 2;
   transform: translateY(-50%);
   user-select: none;
@@ -61,9 +63,20 @@ export const LogoWrapper = styled.div<CollapsibleStyleProps>`
   }
 `;
 
+export const LogoImage = styled.figure`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
 export const Banner = styled.div<CollapsibleStyleProps>`
   position: relative;
+  width: 100%;
+  min-height: 10rem;
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    min-height: 20rem;
+  }
   &::after {
     content: "";
     position: absolute;

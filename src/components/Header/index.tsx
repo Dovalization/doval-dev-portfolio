@@ -12,9 +12,9 @@ export const Header = () => {
           <Image
             src={fullLogo}
             alt="Doval Dev Logo"
-            layout="responsive"
-            objectFit="contain"
             priority
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </S.LogoWrapper>
         <S.SocialIconsContainer>

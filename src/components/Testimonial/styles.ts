@@ -24,6 +24,7 @@ export const Text = styled.p`
 `;
 
 export const AvatarWrapper = styled.div`
+  position: relative;
   border-radius: 50%;
   overflow: hidden;
   width: 5rem;

@@ -31,23 +31,25 @@ export const HeroSection = ({
       <S.HeroBackgroundDesktop>
         <Image
           src={heroBgDesktop}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           alt="hero"
           quality={100}
           placeholder="blur"
           priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </S.HeroBackgroundDesktop>
       <S.HeroBackgroundMobile>
         <Image
           src={heroBgMobile}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           alt="hero"
           quality={100}
           placeholder="blur"
           priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </S.HeroBackgroundMobile>
       <S.ContentContainer>

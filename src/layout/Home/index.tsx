@@ -22,7 +22,6 @@ type HomeLayoutProps = IHomepageProps;
 // Props should be destructured before being passed to the component, like so:
 
 export const HomeLayout = ({ homepage }: HomeLayoutProps) => {
-  console.log({ homepage });
   return (
     <S.Wrapper>
       <HeroSection

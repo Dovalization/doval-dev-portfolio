@@ -1,7 +1,7 @@
 import { StyledIconBase } from "@styled-icons/styled-icon";
 import styled from "styled-components";
 
-export const Wrapper = styled.a`
+export const Wrapper = styled.span`
   display: inline-block;
   border-radius: 50%;
   padding: 0.8rem;

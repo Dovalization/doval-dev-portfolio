@@ -41,7 +41,7 @@ export const Wrapper = styled(motion.button)`
   }
 `;
 
-export const LinkButtonWrapper = styled(motion.a)`
+export const LinkButtonWrapper = styled(motion.span)`
   /* Positioning */
 
   /* Display & Box Model */

@@ -25,7 +25,7 @@ export const LogoWrapper = styled.div`
   position: relative;
   max-width: 15rem;
   width: 100%;
-  height: 100%;
+  height: 5rem;
 `;
 
 export const SocialIconsContainer = styled.div`

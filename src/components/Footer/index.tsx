@@ -10,8 +10,7 @@ export const Footer = () => {
           <Image
             src={singleLogo}
             alt="Doval Dev Logo"
-            layout="responsive"
-            objectFit="contain"
+            style={{ width: "100%", height: "100%" }}
           />
         </S.LogoWrapper>
         <S.Copyright>

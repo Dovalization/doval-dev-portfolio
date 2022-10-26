@@ -16,10 +16,9 @@ export const CasesSection = ({ projects }: CasesSectionProps) => {
         <Image
           src={bgImage}
           alt=""
-          layout="fill"
-          objectFit="contain"
+          fill
           quality={100}
-          placeholder="blur"
+          style={{ objectFit: "contain" }}
         />
       </S.BackgroundWrapper>
       <S.ProjectsContainer>

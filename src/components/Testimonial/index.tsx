@@ -8,18 +8,11 @@ export const Testimonial = ({
   authorAvatar,
   testimonialText,
 }: ITestimonialFields) => {
-  console.log({ authorAvatar, testimonialText, authorName, authorTitle });
   return (
     <S.Wrapper>
       <S.ContentContainer>
         <S.QuoteWrapper>
-          <Image
-            src="/images/quote.svg"
-            alt="quote"
-            layout="responsive"
-            width="100%"
-            height="100%"
-          />
+          <Image src="/images/quote.svg" alt="quote" width={50} height={50} />
         </S.QuoteWrapper>
         <S.Text>{testimonialText}</S.Text>
       </S.ContentContainer>
@@ -27,11 +20,9 @@ export const Testimonial = ({
         <S.AvatarWrapper>
           <Image
             src={`https:${authorAvatar.fields.file.url}`}
-            layout="responsive"
-            objectFit="cover"
-            width={100}
-            height={100}
             alt={`Picture of ${authorName}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </S.AvatarWrapper>
         <S.AuthorInfo>
