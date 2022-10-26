@@ -22,7 +22,7 @@ const RICHTEXT_OPTIONS: Options = {
   },
 };
 
-export const BlogPost = ({
+const BlogPost = ({
   content,
   coverImage,
   date,
@@ -39,6 +39,8 @@ export const BlogPost = ({
     </div>
   );
 };
+
+export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // get all blog posts from contentful

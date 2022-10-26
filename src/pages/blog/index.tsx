@@ -21,7 +21,7 @@ const RICHTEXT_OPTIONS: Options = {
   },
 };
 
-export const BlogPage = ({ blogPosts }: IBlogPageProps) => {
+const BlogPage = ({ blogPosts }: IBlogPageProps) => {
   return (
     <>
       {blogPosts.map((post) => (
@@ -39,6 +39,8 @@ export const BlogPage = ({ blogPosts }: IBlogPageProps) => {
     </>
   );
 };
+
+export default BlogPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // get all blog posts from contentful
