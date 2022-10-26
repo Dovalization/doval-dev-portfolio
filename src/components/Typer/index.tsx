@@ -26,7 +26,7 @@ export const Typer = ({
   const stringSplitter = useCallback((string: string) => {
     const splitter = new GraphemeSplitter();
     const splitString = splitter.splitGraphemes(string);
-    return splitString;
+    return splitString.toString();
     // join the array of graphemes into a string
   }, []);
 

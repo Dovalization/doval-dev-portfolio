@@ -145,11 +145,7 @@ export const ContactForm = () => {
             </Link>
           </span>
         </S.SuccessMessage>
-        <Button
-          type="submit"
-          icon={submitButtonIcons[submitButtonState]}
-          disabled={isSubmitting || isSubmitSuccessful}
-        >
+        <Button type="submit" icon={submitButtonIcons[submitButtonState]}>
           {submitButtonText[submitButtonState]}
         </Button>
         <ReCaptcha ref={recaptchaRef} size="invisible" hidden={true} />
