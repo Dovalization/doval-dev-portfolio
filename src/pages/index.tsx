@@ -48,5 +48,6 @@ export const getStaticProps: GetStaticProps<IHomepageProps> = async () => {
     props: {
       homepage: contentfulResponse.fields,
     },
+    revalidate: 120,
   };
 };
