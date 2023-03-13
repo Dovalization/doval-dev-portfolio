@@ -35,7 +35,11 @@ export const HomeLayout = ({ homepage }: HomeLayoutProps) => {
         title={homepage.testimonialsSectionTitle}
         subtitle={homepage.testimonialsSectionSubtitle}
       />
-      <AboutSection aboutText={homepage.aboutText} cvFile={homepage.cvFile} />
+      <AboutSection
+        aboutText={homepage.aboutText}
+        cvFile={homepage.cvFile}
+        profileImage={homepage.profileImage}
+      />
       <ContactSection
         title={homepage.contactSectionTitle}
         text={homepage.contactSectionText}

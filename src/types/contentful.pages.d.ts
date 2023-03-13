@@ -27,6 +27,7 @@ export interface IHomepageFields {
   testimonialsSectionSubtitle: string;
   testimonials: Entry<ITestimonialFields>[];
   aboutText: Document;
+  profileImage: Asset;
   cvFile: Asset;
   contactSectionTitle: Document;
   contactSectionText: Document;

@@ -24,9 +24,14 @@ const RICHTEXT_OPTIONS: Options = {
 interface IAboutSectionProps {
   aboutText: Document;
   cvFile: Asset;
+  profileImage: Asset;
 }
 
-export const AboutSection = ({ aboutText, cvFile }: IAboutSectionProps) => {
+export const AboutSection = ({
+  aboutText,
+  cvFile,
+  profileImage,
+}: IAboutSectionProps) => {
   const [aboutSectionText, setAboutSectionText] = useState(aboutText);
 
   useEffect(() => {
@@ -47,7 +52,7 @@ export const AboutSection = ({ aboutText, cvFile }: IAboutSectionProps) => {
         </S.CopyContainer>
         <S.ImageWrapper>
           <Image
-            src="/images/doval-dev-profile.jpg"
+            src={`https:${profileImage.fields.file.url}`}
             alt="Doval"
             fill
             quality={100}
