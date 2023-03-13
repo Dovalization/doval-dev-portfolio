@@ -46,7 +46,7 @@ export const HeroContent = styled(motion.div)`
 export const Title = styled(motion.h1)`
   line-height: 1.25;
   text-align: center;
-  max-width: 19ch;
+  max-width: 18ch;
   font-size: ${({ theme }) => theme.fontSizes.medium};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {

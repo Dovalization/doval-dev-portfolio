@@ -2,22 +2,14 @@ import { StyledIcon } from "@styled-icons/styled-icon";
 import { HTMLMotionProps } from "framer-motion";
 
 import Link from "next/link";
-import { MouseEventHandler } from "react";
 import * as S from "./styles";
 
-type TIcon = "rightArrow" | "leftArrow" | "downArrow" | "upArrow";
-
-interface ButtonProps extends HTMLMotionProps<"button" | "a"> {
+interface ButtonProps extends HTMLMotionProps<"button"> {
   link?: string;
   icon?: StyledIcon;
 }
 
-interface PlayButtonProps extends HTMLMotionProps<"button"> {
-  icon?: StyledIcon;
-}
-
-interface LinkButtonProps extends HTMLMotionProps<"a"> {
-  icon?: StyledIcon;
+interface LinkButtonProps extends ButtonProps {
   link: string;
 }
 
@@ -49,7 +41,7 @@ const PlainButton = ({
   icon: Icon,
   variants,
   onClick,
-}: PlayButtonProps) => {
+}: ButtonProps) => {
   return (
     <S.Wrapper variants={variants} onClick={onClick}>
       <S.ButtonContents>
@@ -67,18 +59,14 @@ const PlainButton = ({
 export const Button = ({ children, link, onClick, ...props }: ButtonProps) => {
   if (link) {
     return (
-      <ButtonLink
-        link={link}
-        onClick={onClick as MouseEventHandler<HTMLAnchorElement>}
-        icon={props.icon}
-      >
+      <ButtonLink link={link} onClick={onClick} {...props}>
         {children}
       </ButtonLink>
     );
   }
 
   return (
-    <PlainButton onClick={onClick as MouseEventHandler<HTMLButtonElement>}>
+    <PlainButton onClick={onClick} {...props}>
       {children}
     </PlainButton>
   );
